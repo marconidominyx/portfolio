@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dominyx | Nomad</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="nav-brand">Portfolio</div>
+			<button
+				id="themeToggle"
+				class="theme-toggle"
+				aria-label="Toggle Dark Mode"
+			>
+				<i class="fas fa-moon"></i>
+			</button>
+		</nav>
+
+		<!-- Home Section -->
+		<section id="home" class="section">
+			<div class="container">
+				<div class="hero-content">
+					<h1>Welcome! I'm <span class="highlight">Marconi Dominyx</span></h1>
+					<p class="lead">Passionately driven to explore life.</p>
+					<div class="social-links">
+						<a
+							href="https://github.com/marconidominyx"
+							class="social-icon"
+							target="_blank"
+							><i class="fab fa-github"></i
+						></a>
+						<a
+							href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/"
+							class="social-icon"
+							target="_blank"
+							><i class="fab fa-linkedin"></i
+						></a>
+						<a
+							href="https://www.tiktok.com/@marconidominyx"
+							class="social-icon"
+							target="_blank"
+							><i class="fab fa-tiktok"></i
+						></a>
+						<a
+							href="https://www.facebook.com/MarconiDominyx/ "
+							class="social-icon"
+							target="_blank"
+							><i class="fab fa-facebook"></i
+						></a>
+						<a
+							href="https://www.youtube.com/@MarconiDominyx"
+							class="social-icon"
+							target="_blank"
+							><i class="fab fa-youtube"></i
+						></a>
+
+						<a
+							href="https://www.instagram.com/marconidominyx/"
+							class="social-icon"
+							target="_blank"
+							><i class="fab fa-instagram"></i
+						></a>
+						<a
+							href="mailto:marconidominyx@gmail.com"
+							class="social-icon"
+							title="Email Me"
+						>
+							<i class="fas fa-envelope"></i>
+						</a>
+					</div>
+					<a href="#about" class="cta-button">Discover My Journey</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about" class="section">
+			<div class="container">
+				<h2 class="section-title">About Me</h2>
+				<div class="about-content">
+					<div class="profile-image">
+						<img src="photo_2025-04-20_00-02-07.jpg" alt="Marconi Dominyx" />
+					</div>
+					<div class="about-text">
+						<p>
+							Hello! I'm Marconi Dominyx, a nomad explorer. Passionately driven
+							to explore life, I approach every journey and project with
+							insatiable curiosity and a commitment to continuous personal
+							growth, cultivating a diverse set of skills along the way.
+						</p>
+						<button class="resume-btn" onclick="openResumeModal()">
+							<i class="fas fa-file-image"></i>
+							<span>View Resume</span>
+						</button>
+					</div>
+				</div>
+
+				<!-- Add this skills section -->
+				<div class="skills-section">
+					<h3 class="skills-title">My Professional Skills</h3>
+					<div class="skills-grid">
+						<!-- New Skill: Web Development -->
+						<!-- <div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Web+Development', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-code skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Web Development</div>
+								<div class="skill-description">
+									Full-stack web development with modern technologies
+								</div>
+							</div>
+						</div> -->
+
+						<!-- New Skill: Graphic Design -->
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Graphic+Design', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-pencil-ruler skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Graphic Design</div>
+								<div class="skill-description">
+									Visual content creation and brand design
+								</div>
+							</div>
+						</div>
+
+						<!-- Keep all your existing skill items below -->
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Virtual+Assistance', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-hands-helping skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Virtual Assistance</div>
+								<div class="skill-description">
+									Comprehensive virtual support and assistance
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Administrative+Support', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-tasks skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Administrative Support</div>
+								<div class="skill-description">
+									Efficient administrative task management
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Social+Media+Management', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-share-alt skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Social Media Management</div>
+								<div class="skill-description">
+									Strategic social media content and engagement
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Community+Management', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-users skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Community Management</div>
+								<div class="skill-description">
+									Building and nurturing online communities
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Event+Coordination', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-calendar-check skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Event Coordination</div>
+								<div class="skill-description">
+									Planning and executing successful events
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Live+Stream+Management', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-video skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Live Stream Management</div>
+								<div class="skill-description">
+									Professional live streaming coordination
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Content+Creation', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-pen-fancy skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Content Creation</div>
+								<div class="skill-description">
+									Creating engaging digital content
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Project+Management', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-project-diagram skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Project Management</div>
+								<div class="skill-description">
+									Overseeing projects from start to finish
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Communication+and+Collaboration', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-comments skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Communication and Collaboration</div>
+								<div class="skill-description">
+									Effective team communication and coordination
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="skill-item"
+							onclick="window.open('https://www.google.com/search?q=what+is+Time+Management', '_blank')"
+						>
+							<div class="skill-icon-wrapper">
+								<i class="fas fa-clock skill-icon"></i>
+							</div>
+							<div class="skill-content">
+								<div class="skill-name">Time Management</div>
+								<div class="skill-description">
+									Efficient scheduling and task prioritization
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Update the Coming Soon section -->
+		<section id="coming-soon" class="section">
+			<div class="container">
+				<h2 class="section-title">Coming Soon</h2>
+				<div class="coming-soon-container">
+					<div class="coming-soon-content">
+						<i class="fas fa-rocket coming-soon-icon"></i>
+						<h3>Something Exciting is Coming!</h3>
+						<p>I'm working on something awesome. Stay tuned!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Resume Modal -->
+		<div id="resumeModal" class="modal">
+			<div class="modal-content resume-modal">
+				<span class="close" onclick="closeResumeModal()">&times;</span>
+				<div class="resume-container">
+					<div class="resume-header">
+						<h2>My Resume</h2>
+						<a href="Resume New.pdf" download class="download-btn">
+							<i class="fas fa-file-pdf"></i>
+							<span>Download PDF</span>
+						</a>
+					</div>
+					<div class="resume-viewer">
+						<img src="Resume New.png" alt="My Resume" class="resume-image" />
+						<div class="zoom-controls">
+							<button class="zoom-btn" onclick="zoomResume('in')">
+								<i class="fas fa-search-plus"></i>
+							</button>
+							<button class="zoom-btn" onclick="zoomResume('out')">
+								<i class="fas fa-search-minus"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p class="copyright">
+					© <span id="currentYear"></span> Marconi Dominyx Gayo Asis | Nomad
+					Explorer
+				</p>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
