@@ -1098,3 +1098,100 @@ body {
 		font-size: 1rem;
 	}
 }
+
+/* Airdrop Farming Section */
+.airdrop-content {
+	display: flex;
+	justify-content: center;
+	padding: 2rem 0;
+}
+
+.airdrop-card {
+	background-color: var(--card-bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-md);
+	padding: 2.5rem;
+	max-width: 800px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	transition: var(--transition);
+	border: 1px solid var(--border-color);
+}
+
+.airdrop-card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-lg);
+}
+
+.airdrop-icon {
+	width: 80px;
+	height: 80px;
+	background: var(--gradient-primary);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.airdrop-icon i {
+	font-size: 2.5rem;
+	color: var(--white);
+}
+
+.airdrop-text {
+	flex: 1;
+}
+
+.airdrop-text p {
+	color: var(--text-color);
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+.airdrop-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.5rem;
+	background: var(--gradient-primary);
+	color: var(--white);
+	text-decoration: none;
+	border-radius: var(--border-radius);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: 500;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.airdrop-link:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.airdrop-link i {
+	font-size: 1.1rem;
+	transition: transform 0.3s ease;
+}
+
+.airdrop-link:hover i {
+	transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+	.airdrop-card {
+		flex-direction: column;
+		text-align: center;
+		padding: 2rem;
+	}
+
+	.airdrop-icon {
+		margin-bottom: 1.5rem;
+	}
+
+	.airdrop-text p {
+		font-size: 1rem;
+	}
+}
