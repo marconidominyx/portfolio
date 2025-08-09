@@ -12,20 +12,17 @@
 		/>
 	</head>
 	<body>
-		<!-- Navigation -->
-		<nav class="navbar">
-			<div class="nav-brand">Portfolio</div>
-			<button
-				id="themeToggle"
-				class="theme-toggle"
-				aria-label="Toggle Dark Mode"
-			>
-				<i class="fas fa-moon"></i>
-			</button>
-		</nav>
+		<!-- Floating Theme Toggle -->
+		<button
+			id="themeToggle"
+			class="theme-toggle floating-toggle"
+			aria-label="Toggle Dark Mode"
+		>
+			<i class="fas fa-moon"></i>
+		</button>
 
 		<!-- Home Section -->
-		<section id="home" class="section">
+		<section id="home" class="section reveal-up">
 			<!-- Space Scene (dark mode only) -->
 			<div class="space-scene" aria-hidden="true">
 				<div class="stars"></div>
@@ -64,15 +61,26 @@
 				</div>
 				<div class="ground">
 					<div class="ground-characters">
-						<i class="fas fa-child" aria-hidden="true"></i>
-						<i class="fas fa-dog" aria-hidden="true"></i>
+						<span class="kid">
+							<i class="fas fa-child" aria-hidden="true"></i>
+							<span class="shout-bubble" aria-hidden="true"></span>
+							<span class="shout-wave w1" aria-hidden="true"></span>
+							<span class="shout-wave w2" aria-hidden="true"></span>
+						</span>
+						<span class="dog"
+							><i class="fas fa-dog" aria-hidden="true"></i
+						></span>
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="hero-content">
-					<h1>Welcome! I'm <span class="highlight">Marconi Dominyx</span></h1>
-					<p class="lead">Passionately driven to explore life.</p>
+					<h1 class="hero-title">
+						<span class="hero-title-main gradient-text"
+							>Ideas. Creativity. Growth.</span
+						>
+						<span class="hero-title-sub">That’s my journey</span>
+					</h1>
 					<div class="social-links">
 						<a
 							href="https://github.com/marconidominyx"
@@ -104,7 +112,6 @@
 							target="_blank"
 							><i class="fab fa-youtube"></i
 						></a>
-
 						<a
 							href="https://www.instagram.com/marconidominyx/"
 							class="social-icon"
@@ -115,31 +122,35 @@
 							href="mailto:marconidominyx@gmail.com"
 							class="social-icon"
 							title="Email Me"
-						>
-							<i class="fas fa-envelope"></i>
-						</a>
+							><i class="fas fa-envelope"></i
+						></a>
 					</div>
-					<a href="#about" class="cta-button">Discover My Journey</a>
+					<!-- CTA removed as requested -->
 				</div>
 			</div>
 		</section>
 
 		<!-- About Section -->
-		<section id="about" class="section">
+		<section id="about" class="section reveal-up">
 			<div class="container">
-				<h2 class="section-title">About Me</h2>
+				<h2 class="section-title">This is me.</h2>
 				<div class="about-content">
 					<div class="profile-image">
 						<img src="photo_2025-04-20_00-02-07.jpg" alt="Marconi Dominyx" />
 					</div>
-					<div class="about-text">
+					<div class="about-text about-card">
 						<p>
-							Hello! I'm Marconi Dominyx, a nomad explorer. Passionately driven
-							to explore life, I approach every journey and project with
-							insatiable curiosity and a commitment to continuous personal
-							growth, cultivating a diverse set of skills along the way.
+							I explore ideas, build solutions, and connect people. Always
+							learning. Always creating. That’s my journey — and I’m just
+							getting started.
 						</p>
-						<button class="resume-btn" onclick="openResumeModal()">
+						<button
+							type="button"
+							class="resume-btn"
+							aria-controls="resumeModal"
+							data-resume-src="Resume.pdf"
+							onclick="openResumeModal()"
+						>
 							<i class="fas fa-file-pdf"></i>
 							<span>View Resume</span>
 						</button>
@@ -147,13 +158,12 @@
 				</div>
 
 				<!-- Skills: redesigned into grouped pill-style categories -->
-				<div class="skills-section">
+				<div class="skills-section reveal-up">
 					<h3 class="skills-title">Skills</h3>
 					<div class="skills-groups">
 						<div class="skills-group">
 							<h4 class="skills-group-title">
-								<i class="fas fa-cogs"></i>
-								Operations
+								<i class="fas fa-cogs"></i> Operations
 							</h4>
 							<ul class="skills-pills">
 								<li class="skill-pill">
@@ -170,11 +180,9 @@
 								</li>
 							</ul>
 						</div>
-
 						<div class="skills-group">
 							<h4 class="skills-group-title">
-								<i class="fas fa-paint-brush"></i>
-								Creative
+								<i class="fas fa-paint-brush"></i> Creative
 							</h4>
 							<ul class="skills-pills">
 								<li class="skill-pill">
@@ -188,11 +196,9 @@
 								</li>
 							</ul>
 						</div>
-
 						<div class="skills-group">
 							<h4 class="skills-group-title">
-								<i class="fas fa-users"></i>
-								Collaboration
+								<i class="fas fa-users"></i> Collaboration
 							</h4>
 							<ul class="skills-pills">
 								<li class="skill-pill">
@@ -209,15 +215,38 @@
 								</li>
 							</ul>
 						</div>
+						<!-- New Technical & Digital Tools group -->
+						<div class="skills-group">
+							<h4 class="skills-group-title">
+								<i class="fas fa-tools"></i> Technical & Digital Tools
+							</h4>
+							<ul class="skills-pills">
+								<li class="skill-pill pill-has-icon pill-canva">
+									<span class="pill-icon canva"></span> Canva
+								</li>
+								<li class="skill-pill pill-has-icon pill-figma">
+									<span class="pill-icon figma"></span> Figma
+								</li>
+								<li class="skill-pill pill-has-icon pill-notion">
+									<span class="pill-icon notion"></span> Notion
+								</li>
+								<li class="skill-pill pill-has-icon pill-trello">
+									<span class="pill-icon trello"></span> Trello
+								</li>
+								<li class="skill-pill pill-has-icon pill-code">
+									<span class="pill-icon code"></span> HTML/CSS basics
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- My Work (OpenAI-style) -->
-		<section id="work" class="section">
+		<!-- Journey (OpenAI-style) -->
+		<section id="work" class="section reveal-up">
 			<div class="container">
-				<h2 class="section-title">My Work</h2>
+				<h2 class="section-title">Journey</h2>
 				<div class="work-grid">
 					<!-- Projects Column -->
 					<div class="work-column">
@@ -239,15 +268,11 @@
 									target="_blank"
 									class="ai-cta"
 									aria-label="Open Urian Society"
-								>
-									<i class="fas fa-arrow-right"></i>
-								</a>
+									><i class="fas fa-arrow-right"></i
+								></a>
 							</li>
-
 							<li class="ai-item">
-								<div class="ai-icon">
-									<i class="fas fa-clipboard-list"></i>
-								</div>
+								<div class="ai-icon"><i class="fas fa-clipboard-list"></i></div>
 								<div class="ai-content">
 									<h3>IDEA Reservation System</h3>
 									<p>
@@ -260,9 +285,8 @@
 									target="_blank"
 									class="ai-cta"
 									aria-label="Open Notion"
-								>
-									<i class="fas fa-arrow-right"></i>
-								</a>
+									><i class="fas fa-arrow-right"></i
+								></a>
 							</li>
 						</ul>
 					</div>
@@ -272,9 +296,7 @@
 						<h3 class="column-title">Airdrop & Crypto</h3>
 						<ul class="ai-list">
 							<li class="ai-item">
-								<div class="ai-icon">
-									<i class="fas fa-coins"></i>
-								</div>
+								<div class="ai-icon"><i class="fas fa-coins"></i></div>
 								<div class="ai-content">
 									<h3>Airdrop Farming</h3>
 									<p>
@@ -287,9 +309,25 @@
 									target="_blank"
 									class="ai-cta"
 									aria-label="Open Airdrop Activities"
-								>
-									<i class="fas fa-arrow-right"></i>
-								</a>
+									><i class="fas fa-arrow-right"></i
+								></a>
+							</li>
+							<li class="ai-item">
+								<div class="ai-icon"><i class="fas fa-eye"></i></div>
+								<div class="ai-content">
+									<h3>Bird Eye Viewer</h3>
+									<p>
+										A high-level overview dashboard for tracking key onchain
+										activities and signals.
+									</p>
+								</div>
+								<a
+									href="https://www.notion.so/Bird-Eye-Viewer-2220db6fc5fa80c4851de21a6effe5dd"
+									target="_blank"
+									class="ai-cta"
+									aria-label="Open Bird Eye Viewer"
+									><i class="fas fa-arrow-right"></i
+								></a>
 							</li>
 						</ul>
 					</div>
@@ -304,10 +342,9 @@
 				<div class="resume-container">
 					<div class="resume-header">
 						<h2>My Resume</h2>
-						<a href="Resume.pdf" download class="download-btn">
-							<i class="fas fa-file-pdf"></i>
-							<span>Download PDF</span>
-						</a>
+						<a href="Resume.pdf" download class="download-btn"
+							><i class="fas fa-file-pdf"></i><span>Download PDF</span></a
+						>
 					</div>
 					<div class="resume-viewer">
 						<object
@@ -328,11 +365,11 @@
 			</div>
 		</div>
 
-		<footer class="footer">
+		<footer class="footer reveal-up">
 			<div class="container">
 				<p class="copyright">
-					© <span id="currentYear"></span> Marconi Dominyx Gayo Asis | Nomad
-					Explorer
+					© 2025 Marconi Dominyx Gayo Asis | Building ideas. Exploring
+					possibilities. Creating impact.
 				</p>
 			</div>
 		</footer>

@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	setupThemeToggle();
 	updateCopyright();
 	setupEventListeners();
+	setupScrollReveal();
 });
 
 // Theme Functions
@@ -58,11 +59,13 @@ function zoomResume(direction) {
 	const resumeImage = document.querySelector(".resume-image");
 	const currentScale =
 		parseFloat(
-			resumeImage.style.transform.replace("scale(", "").replace(")", "")
+			(resumeImage?.style.transform || "")
+				.replace("scale(", "")
+				.replace(")", "")
 		) || 1;
 	const newScale =
 		direction === "in" ? currentScale + 0.2 : Math.max(0.5, currentScale - 0.2);
-	resumeImage.style.transform = `scale(${newScale})`;
+	if (resumeImage) resumeImage.style.transform = `scale(${newScale})`;
 }
 
 // Utility Functions
@@ -96,11 +99,32 @@ function setupEventListeners() {
 			e.preventDefault();
 			const target = document.querySelector(this.getAttribute("href"));
 			if (target) {
-				target.scrollIntoView({
-					behavior: "smooth",
-					block: "start",
-				});
+				target.scrollIntoView({ behavior: "smooth", block: "start" });
 			}
 		});
 	});
+}
+
+// Scroll Reveal
+function setupScrollReveal() {
+	const revealEls = document.querySelectorAll(".reveal-up");
+	if (!("IntersectionObserver" in window) || revealEls.length === 0) {
+		revealEls.forEach((el) => el.classList.add("is-visible"));
+		return;
+	}
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-visible");
+					observer.unobserve(entry.target);
+				}
+			});
+		},
+		{
+			threshold: 0.2,
+			rootMargin: "0px 0px -10% 0px",
+		}
+	);
+	revealEls.forEach((el) => observer.observe(el));
 }
