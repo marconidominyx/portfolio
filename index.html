@@ -26,6 +26,49 @@
 
 		<!-- Home Section -->
 		<section id="home" class="section">
+			<!-- Space Scene (dark mode only) -->
+			<div class="space-scene" aria-hidden="true">
+				<div class="stars"></div>
+				<div class="moon"></div>
+				<div class="rocket"><i class="fas fa-rocket"></i></div>
+				<div class="astronaut"><i class="fas fa-user-astronaut"></i></div>
+			</div>
+			<!-- Day Scene (light mode only) -->
+			<div class="day-scene" aria-hidden="true">
+				<div class="sun"></div>
+				<div class="airplane"><i class="fas fa-plane"></i></div>
+				<!-- UP-style house with balloons -->
+				<div class="up-house">
+					<div class="balloons">
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+					</div>
+					<div class="house">
+						<div class="roof"></div>
+						<div class="body">
+							<div class="window w1"></div>
+							<div class="window w2"></div>
+							<div class="door"></div>
+						</div>
+					</div>
+				</div>
+				<div class="ground">
+					<div class="ground-characters">
+						<i class="fas fa-child" aria-hidden="true"></i>
+						<i class="fas fa-dog" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
 			<div class="container">
 				<div class="hero-content">
 					<h1>Welcome! I'm <span class="highlight">Marconi Dominyx</span></h1>
@@ -97,204 +140,81 @@
 							growth, cultivating a diverse set of skills along the way.
 						</p>
 						<button class="resume-btn" onclick="openResumeModal()">
-							<i class="fas fa-file-image"></i>
+							<i class="fas fa-file-pdf"></i>
 							<span>View Resume</span>
 						</button>
 					</div>
 				</div>
 
-				<!-- Add this skills section -->
+				<!-- Skills: redesigned into grouped pill-style categories -->
 				<div class="skills-section">
-					<h3 class="skills-title">My Professional Skills</h3>
-					<div class="skills-grid">
-						<!-- New Skill: Web Development -->
-						<!-- <div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Web+Development', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-code skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Web Development</div>
-								<div class="skill-description">
-									Full-stack web development with modern technologies
-								</div>
-							</div>
-						</div> -->
-
-						<!-- New Skill: Graphic Design -->
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Graphic+Design', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-pencil-ruler skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Graphic Design</div>
-								<div class="skill-description">
-									Visual content creation and brand design
-								</div>
-							</div>
+					<h3 class="skills-title">Skills</h3>
+					<div class="skills-groups">
+						<div class="skills-group">
+							<h4 class="skills-group-title">
+								<i class="fas fa-cogs"></i>
+								Operations
+							</h4>
+							<ul class="skills-pills">
+								<li class="skill-pill">
+									<i class="fas fa-hands-helping"></i> Virtual Assistance
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-tasks"></i> Administrative Support
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-calendar-check"></i> Event Coordination
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-video"></i> Live Stream Management
+								</li>
+							</ul>
 						</div>
 
-						<!-- Keep all your existing skill items below -->
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Virtual+Assistance', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-hands-helping skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Virtual Assistance</div>
-								<div class="skill-description">
-									Comprehensive virtual support and assistance
-								</div>
-							</div>
+						<div class="skills-group">
+							<h4 class="skills-group-title">
+								<i class="fas fa-paint-brush"></i>
+								Creative
+							</h4>
+							<ul class="skills-pills">
+								<li class="skill-pill">
+									<i class="fas fa-pencil-ruler"></i> Graphic Design
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-pen-fancy"></i> Content Creation
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-share-alt"></i> Social Media Management
+								</li>
+							</ul>
 						</div>
 
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Administrative+Support', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-tasks skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Administrative Support</div>
-								<div class="skill-description">
-									Efficient administrative task management
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Social+Media+Management', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-share-alt skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Social Media Management</div>
-								<div class="skill-description">
-									Strategic social media content and engagement
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Community+Management', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-users skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Community Management</div>
-								<div class="skill-description">
-									Building and nurturing online communities
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Event+Coordination', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-calendar-check skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Event Coordination</div>
-								<div class="skill-description">
-									Planning and executing successful events
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Live+Stream+Management', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-video skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Live Stream Management</div>
-								<div class="skill-description">
-									Professional live streaming coordination
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Content+Creation', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-pen-fancy skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Content Creation</div>
-								<div class="skill-description">
-									Creating engaging digital content
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Project+Management', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-project-diagram skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Project Management</div>
-								<div class="skill-description">
-									Overseeing projects from start to finish
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Communication+and+Collaboration', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-comments skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Communication and Collaboration</div>
-								<div class="skill-description">
-									Effective team communication and coordination
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="skill-item"
-							onclick="window.open('https://www.google.com/search?q=what+is+Time+Management', '_blank')"
-						>
-							<div class="skill-icon-wrapper">
-								<i class="fas fa-clock skill-icon"></i>
-							</div>
-							<div class="skill-content">
-								<div class="skill-name">Time Management</div>
-								<div class="skill-description">
-									Efficient scheduling and task prioritization
-								</div>
-							</div>
+						<div class="skills-group">
+							<h4 class="skills-group-title">
+								<i class="fas fa-users"></i>
+								Collaboration
+							</h4>
+							<ul class="skills-pills">
+								<li class="skill-pill">
+									<i class="fas fa-project-diagram"></i> Project Management
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-comments"></i> Communication & Teamwork
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-clock"></i> Time Management
+								</li>
+								<li class="skill-pill">
+									<i class="fas fa-users-cog"></i> Community Management
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Projects & Airdrop Section -->
+		<!-- My Work (OpenAI-style) -->
 		<section id="work" class="section">
 			<div class="container">
 				<h2 class="section-title">My Work</h2>
@@ -302,60 +222,76 @@
 					<!-- Projects Column -->
 					<div class="work-column">
 						<h3 class="column-title">Projects</h3>
-						<div class="projects-grid">
-							<div class="project-card">
-								<div class="project-image logo-container">
-									<img
-										src="URIAN_SOCIETY.png"
-										alt="Urian Society Logo"
-										class="project-logo"
-									/>
+						<ul class="ai-list">
+							<li class="ai-item">
+								<div class="ai-icon">
+									<img src="URIAN_SOCIETY.png" alt="Urian Society" />
 								</div>
-								<div class="project-content">
+								<div class="ai-content">
 									<h3>Urian Society</h3>
 									<p>
-										A community platform where gamers, creators, and innovators
-										unite. Built with modern web technologies to foster
-										meaningful connections and collaboration.
+										A community platform for gamers, creators, and innovators to
+										connect and collaborate.
 									</p>
-									<div class="project-links">
-										<a
-											href="https://marconidominyx.github.io/urians/"
-											class="project-link"
-											target="_blank"
-											><i class="fas fa-external-link-alt"></i> Click to View
-										</a>
-									</div>
 								</div>
-							</div>
-						</div>
+								<a
+									href="https://marconidominyx.github.io/urians/"
+									target="_blank"
+									class="ai-cta"
+									aria-label="Open Urian Society"
+								>
+									<i class="fas fa-arrow-right"></i>
+								</a>
+							</li>
+
+							<li class="ai-item">
+								<div class="ai-icon">
+									<i class="fas fa-clipboard-list"></i>
+								</div>
+								<div class="ai-content">
+									<h3>IDEA Reservation System</h3>
+									<p>
+										Concept documentation for a reservation workflow with UI
+										wireframes and requirements.
+									</p>
+								</div>
+								<a
+									href="https://www.notion.so/IDEA-Reservation-System-1ec0db6fc5fa8088b8a9c848b1c96a77"
+									target="_blank"
+									class="ai-cta"
+									aria-label="Open Notion"
+								>
+									<i class="fas fa-arrow-right"></i>
+								</a>
+							</li>
+						</ul>
 					</div>
 
 					<!-- Airdrop Column -->
 					<div class="work-column">
-						<h3 class="column-title">Airdrop Farming</h3>
-						<div class="airdrop-content">
-							<div class="airdrop-card">
-								<div class="airdrop-icon">
+						<h3 class="column-title">Airdrop & Crypto</h3>
+						<ul class="ai-list">
+							<li class="ai-item">
+								<div class="ai-icon">
 									<i class="fas fa-coins"></i>
 								</div>
-								<div class="airdrop-text">
+								<div class="ai-content">
+									<h3>Airdrop Farming</h3>
 									<p>
-										I actively participate in airdrop farming as part of my
-										crypto strategy. You can view my ongoing projects and
-										activity here:
+										Tracking ongoing airdrops, tasks, and outcomes as part of a
+										broader crypto strategy.
 									</p>
-									<a
-										href="https://polydactyl-petroleum-ff1.notion.site/Airdrop-Farming-13f0db6fc5fa8064bdc4d57dbf0de3db?pvs=4"
-										class="airdrop-link"
-										target="_blank"
-									>
-										<i class="fas fa-external-link-alt"></i> View Airdrop
-										Activities
-									</a>
 								</div>
-							</div>
-						</div>
+								<a
+									href="https://polydactyl-petroleum-ff1.notion.site/Airdrop-Farming-13f0db6fc5fa8064bdc4d57dbf0de3db?pvs=4"
+									target="_blank"
+									class="ai-cta"
+									aria-label="Open Airdrop Activities"
+								>
+									<i class="fas fa-arrow-right"></i>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -368,21 +304,25 @@
 				<div class="resume-container">
 					<div class="resume-header">
 						<h2>My Resume</h2>
-						<a href="Resume New.pdf" download class="download-btn">
+						<a href="Resume.pdf" download class="download-btn">
 							<i class="fas fa-file-pdf"></i>
 							<span>Download PDF</span>
 						</a>
 					</div>
 					<div class="resume-viewer">
-						<img src="Resume New.png" alt="My Resume" class="resume-image" />
-						<div class="zoom-controls">
-							<button class="zoom-btn" onclick="zoomResume('in')">
-								<i class="fas fa-search-plus"></i>
-							</button>
-							<button class="zoom-btn" onclick="zoomResume('out')">
-								<i class="fas fa-search-minus"></i>
-							</button>
-						</div>
+						<object
+							data="Resume.pdf"
+							type="application/pdf"
+							class="resume-object"
+							aria-label="Embedded resume"
+						>
+							<div class="resume-fallback">
+								<p>Preview not available. You can download the resume below.</p>
+								<a href="Resume.pdf" class="download-btn"
+									><i class="fas fa-file-pdf"></i> Download PDF</a
+								>
+							</div>
+						</object>
 					</div>
 				</div>
 			</div>

@@ -49,7 +49,9 @@ function closeResumeModal() {
 	document.getElementById("resumeModal").style.display = "none";
 	document.body.style.overflow = "auto";
 	const resumeImage = document.querySelector(".resume-image");
-	resumeImage.style.transform = "scale(1)";
+	if (resumeImage) {
+		resumeImage.style.transform = "scale(1)";
+	}
 }
 
 function zoomResume(direction) {
