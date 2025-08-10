@@ -2663,10 +2663,19 @@ body {
 	width: 100%;
 	padding: 0.55rem 0.7rem;
 	border: 1px solid var(--border-color);
-	background: var(--bg-color);
+	background-color: var(--card-bg);
 	color: var(--text-color);
 	border-radius: 10px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
+
+.network-select option {
+	background-color: var(--card-bg);
+	color: var(--text-color);
+}
+
 .network-select:focus {
 	outline: none;
 	border-color: rgba(16, 163, 127, 0.6);
