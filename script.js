@@ -249,6 +249,7 @@ function setupEventListeners() {
 		if (event.key === "Escape") {
 			closeResumeModal();
 			closeDonateModal();
+			closePersonaModal();
 		}
 	});
 
@@ -314,6 +315,14 @@ function setupEventListeners() {
 		const donateModal = document.getElementById("donateModal");
 		if (event.target === donateModal) {
 			closeDonateModal();
+		}
+	});
+
+	// Close persona modal on outside click
+	window.addEventListener("click", function (event) {
+		const personaModal = document.getElementById("personaModal");
+		if (event.target === personaModal) {
+			closePersonaModal();
 		}
 	});
 }
