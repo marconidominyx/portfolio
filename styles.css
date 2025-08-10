@@ -1933,7 +1933,7 @@ body {
 	top: 16px;
 	right: 72px; /* leave space from theme toggle */
 	z-index: 1200;
-	background: var(--card-bg);
+	background: transparent;
 	border: 1px solid var(--border-color);
 	color: var(--text-color);
 	width: 45px;
@@ -1947,8 +1947,11 @@ body {
 	box-shadow: 0 8px 24px -12px var(--shadow-color);
 }
 .donate-toggle:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 16px 32px -16px var(--shadow-color);
+	background: var(--gradient-primary);
+	border-color: transparent;
+	color: var(--white);
+	transform: rotate(10deg);
+	box-shadow: 0 10px 25px -12px rgba(16, 163, 127, 0.6);
 }
 
 /* Donate modal */
