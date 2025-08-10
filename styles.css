@@ -490,13 +490,19 @@ h6 {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 1000;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.modal.show {
+	opacity: 1;
 }
 
 .modal-content {
 	background-color: var(--card-bg);
-	margin: 10% auto;
+	margin: 5% auto;
 	padding: 2rem;
 	width: 90%;
 	max-width: 900px;
@@ -505,6 +511,12 @@ h6 {
 	color: var(--text-color);
 	border: 1px solid var(--border-color);
 	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+	transform: translateY(-20px);
+	transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+	transform: translateY(0);
 }
 
 .close {
@@ -942,6 +954,52 @@ body {
 
 .resume-btn:hover i {
 	transform: scale(1.1);
+}
+
+/* Persona Button */
+.persona-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: var(--gradient-primary);
+	color: white;
+	padding: 0.8rem 1.5rem;
+	border: none;
+	border-radius: var(--border-radius);
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: var(--transition);
+	box-shadow: 0 10px 25px -12px rgba(16, 163, 127, 0.6);
+	margin-left: 1rem;
+}
+
+.persona-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 15px 35px -15px rgba(16, 163, 127, 0.8);
+}
+
+.persona-btn i {
+	font-size: 1.1rem;
+	transition: var(--transition);
+}
+
+.persona-btn:hover i {
+	transform: scale(1.1);
+}
+
+/* Responsive button layout */
+@media (max-width: 768px) {
+	.resume-btn,
+	.persona-btn {
+		width: 100%;
+		margin: 0.5rem 0;
+		justify-content: center;
+	}
+
+	.persona-btn {
+		margin-left: 0;
+	}
 }
 
 /* Resume Modal Styles */
@@ -1429,7 +1487,16 @@ body {
 	height: 100%;
 	border: none;
 	display: block;
+	background: white;
 }
+
+.resume-iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: white;
+}
+
 .resume-fallback {
 	display: grid;
 	place-items: center;
@@ -1437,6 +1504,48 @@ body {
 	padding: 2rem;
 	text-align: center;
 	color: var(--text-light);
+	height: 100%;
+	background: var(--card-bg);
+}
+
+/* Persona Modal Styles */
+.persona-modal {
+	max-width: 1000px;
+}
+
+.persona-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+.persona-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.persona-header h2 {
+	margin: 0;
+	color: var(--primary-color);
+}
+
+.persona-viewer {
+	background: var(--card-bg);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	position: relative;
+	border: 1px solid var(--border-color);
+	text-align: center;
+}
+
+.persona-image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
 }
 
 /* Day Scene (light mode) */
@@ -2323,4 +2432,43 @@ body {
 	color: var(--text-light);
 	font-size: 0.98rem;
 	letter-spacing: 0.2px;
+}
+
+/* Resume header actions */
+.resume-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--border-color);
+	gap: 1rem;
+}
+.resume-actions {
+	display: flex;
+	gap: 0.75rem;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.open-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: transparent;
+	color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	padding: 0.5rem 1rem;
+	border-radius: var(--border-radius);
+	text-decoration: none;
+	transition: var(--transition);
+}
+.open-btn:hover {
+	background: rgba(16, 163, 127, 0.08);
+	transform: translateY(-1px);
+}
+
+@media (max-width: 520px) {
+	.resume-actions {
+		width: 100%;
+		justify-content: flex-end;
+	}
 }

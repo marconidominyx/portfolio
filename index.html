@@ -152,7 +152,16 @@
 							onclick="openResumeModal()"
 						>
 							<i class="fas fa-file-pdf"></i>
-							<span>View Resume</span>
+							<span>Resume</span>
+						</button>
+						<button
+							type="button"
+							class="persona-btn"
+							aria-controls="personaModal"
+							onclick="openPersonaModal()"
+						>
+							<i class="fas fa-user-circle"></i>
+							<span>Persona Page</span>
 						</button>
 					</div>
 				</div>
@@ -272,6 +281,42 @@
 								></a>
 							</li>
 							<li class="ai-item">
+								<div class="ai-icon"><i class="fas fa-paw"></i></div>
+								<div class="ai-content">
+									<h3>Pet Adoption App</h3>
+									<p>
+										A Figma prototype for a pet adoption application, designed
+										and prototyped in just 5 hours.
+									</p>
+								</div>
+								<a
+									href="https://www.figma.com/proto/gVRQK2UMuh1iM31yzWmFsP/Pet-Adoption?node-id=2-96&p=f&t=ifY8d1PpRsyTpa7c-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A96&show-proto-sidebar=1"
+									target="_blank"
+									class="ai-cta"
+									aria-label="Open Pet Adoption Figma Prototype"
+									><i class="fas fa-arrow-right"></i
+								></a>
+							</li>
+							<li class="ai-item">
+								<div class="ai-icon"><i class="fas fa-desktop"></i></div>
+								<div class="ai-content">
+									<h3>Diosys UI System</h3>
+									<p>
+										UI design and wireframing project for 4th year OJT students.
+										As a 3rd year IT student, I was asked to handle design,
+										wireframing, and prototyping due to the lack of 4th year
+										students with Figma skills.
+									</p>
+								</div>
+								<a
+									href="https://www.figma.com/proto/Rf8CZSmak0ldmO9C6X1zQO/DIOSYS-UI?node-id=2-11&p=f&t=f9cCI0ic4RcTVPGV-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A11"
+									target="_blank"
+									class="ai-cta"
+									aria-label="Open Diosys UI Figma Prototype"
+									><i class="fas fa-arrow-right"></i
+								></a>
+							</li>
+							<li class="ai-item">
 								<div class="ai-icon"><i class="fas fa-clipboard-list"></i></div>
 								<div class="ai-content">
 									<h3>IDEA Reservation System</h3>
@@ -342,9 +387,20 @@
 				<div class="resume-container">
 					<div class="resume-header">
 						<h2>My Resume</h2>
-						<a href="Resume.pdf" download class="download-btn"
-							><i class="fas fa-file-pdf"></i><span>Download PDF</span></a
-						>
+						<div class="resume-actions">
+							<a
+								href="Resume.pdf"
+								target="_blank"
+								rel="noopener"
+								class="open-btn"
+							>
+								<i class="fas fa-up-right-from-square"></i
+								><span>Open in new tab</span>
+							</a>
+							<a href="Resume.pdf" download class="download-btn"
+								><i class="fas fa-file-pdf"></i><span>Download PDF</span></a
+							>
+						</div>
 					</div>
 					<div class="resume-viewer">
 						<object
@@ -354,12 +410,49 @@
 							aria-label="Embedded resume"
 						>
 							<div class="resume-fallback">
-								<p>Preview not available. You can download the resume below.</p>
-								<a href="Resume.pdf" class="download-btn"
-									><i class="fas fa-file-pdf"></i> Download PDF</a
+								<p>PDF preview not available in this browser.</p>
+								<p>You can open the file in a new tab or download it.</p>
+								<div
+									style="
+										display: flex;
+										gap: 0.75rem;
+										flex-wrap: wrap;
+										justify-content: center;
+									"
 								>
+									<a
+										href="Resume.pdf"
+										target="_blank"
+										rel="noopener"
+										class="open-btn"
+									>
+										<i class="fas fa-up-right-from-square"></i> Open in new tab
+									</a>
+									<a href="Resume.pdf" download class="download-btn"
+										><i class="fas fa-file-pdf"></i> Download PDF</a
+									>
+								</div>
 							</div>
 						</object>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Persona Modal -->
+		<div id="personaModal" class="modal">
+			<div class="modal-content persona-modal">
+				<span class="close" onclick="closePersonaModal()">&times;</span>
+				<div class="persona-container">
+					<div class="persona-header">
+						<h2>Persona Page</h2>
+					</div>
+					<div class="persona-viewer">
+						<img
+							src="Persona Page.png"
+							alt="Persona Page"
+							class="persona-image"
+						/>
 					</div>
 				</div>
 			</div>

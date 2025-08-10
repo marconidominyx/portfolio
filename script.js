@@ -1,10 +1,27 @@
 // Theme Management
 document.addEventListener("DOMContentLoaded", () => {
+	console.log("DOM loaded, initializing...");
 	initializeTheme();
 	setupThemeToggle();
 	updateCopyright();
 	setupEventListeners();
 	setupScrollReveal();
+
+	// Debug: Check if resume modal exists
+	const resumeModal = document.getElementById("resumeModal");
+	if (resumeModal) {
+		console.log("Resume modal found:", resumeModal);
+	} else {
+		console.error("Resume modal not found!");
+	}
+
+	// Debug: Check if resume button exists
+	const resumeBtn = document.querySelector(".resume-btn");
+	if (resumeBtn) {
+		console.log("Resume button found:", resumeBtn);
+	} else {
+		console.error("Resume button not found!");
+	}
 });
 
 // Theme Functions
@@ -42,16 +59,92 @@ function toggleTheme() {
 
 // Resume Modal Functions
 function openResumeModal() {
-	document.getElementById("resumeModal").style.display = "block";
+	console.log("Opening resume modal...");
+	const modal = document.getElementById("resumeModal");
+	if (!modal) {
+		console.error("Resume modal element not found");
+		return;
+	}
+
+	// Determine source from the triggering button if available
+	let src = "Resume.pdf";
+	try {
+		// Find the last actively focused resume button
+		const activeBtn = document.activeElement?.classList?.contains("resume-btn")
+			? document.activeElement
+			: document.querySelector(".resume-btn");
+		if (activeBtn && activeBtn.dataset && activeBtn.dataset.resumeSrc) {
+			src = activeBtn.dataset.resumeSrc;
+		}
+	} catch (e) {}
+
+	// Update object data and action links
+	const objectEl = modal.querySelector(".resume-object");
+	const downloadLinks = modal.querySelectorAll(
+		'.download-btn[href$=".pdf"], .resume-fallback .download-btn'
+	);
+	const openLinks = modal.querySelectorAll(".open-btn");
+	if (objectEl) objectEl.setAttribute("data", src);
+	downloadLinks.forEach((a) => a.setAttribute("href", src));
+	openLinks.forEach((a) => a.setAttribute("href", src));
+
+	// iOS Safari commonly blocks inline PDFs — open in new tab
+	const isIOS =
+		/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+		(navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+	if (isIOS) {
+		window.open(src, "_blank", "noopener");
+		return; // Don't show modal on iOS
+	}
+
+	modal.style.display = "block";
+	modal.offsetHeight; // reflow
+	modal.classList.add("show");
 	document.body.style.overflow = "hidden";
+	console.log("Modal opened successfully");
 }
 
 function closeResumeModal() {
-	document.getElementById("resumeModal").style.display = "none";
-	document.body.style.overflow = "auto";
-	const resumeImage = document.querySelector(".resume-image");
-	if (resumeImage) {
-		resumeImage.style.transform = "scale(1)";
+	console.log("Closing resume modal...");
+	const modal = document.getElementById("resumeModal");
+	if (modal) {
+		modal.classList.remove("show");
+		// Wait for animation to complete before hiding
+		setTimeout(() => {
+			modal.style.display = "none";
+		}, 300);
+		document.body.style.overflow = "auto";
+		console.log("Modal closed successfully");
+	}
+}
+
+// Persona Modal Functions
+function openPersonaModal() {
+	console.log("Opening persona modal...");
+	const modal = document.getElementById("personaModal");
+	if (modal) {
+		modal.style.display = "block";
+		// Trigger reflow to ensure display: block is applied
+		modal.offsetHeight;
+		modal.classList.add("show");
+		document.body.style.overflow = "hidden";
+		console.log("Persona modal opened successfully");
+	} else {
+		console.error("Persona modal element not found");
+	}
+}
+
+function closePersonaModal() {
+	console.log("Closing persona modal...");
+	const modal = document.getElementById("personaModal");
+	if (modal) {
+		modal.classList.remove("show");
+		// Wait for animation to complete before hiding
+		setTimeout(() => {
+			modal.style.display = "none";
+		}, 300);
+		document.body.style.overflow = "auto";
+		console.log("Persona modal closed successfully");
 	}
 }
 
@@ -92,6 +185,38 @@ function setupEventListeners() {
 			closeResumeModal();
 		}
 	});
+
+	// Resume modal specific event listeners
+	const resumeModal = document.getElementById("resumeModal");
+	if (resumeModal) {
+		// Close button event listener
+		const closeBtn = resumeModal.querySelector(".close");
+		if (closeBtn) {
+			closeBtn.addEventListener("click", closeResumeModal);
+		}
+
+		// PDF object error handling
+		const pdfObject = resumeModal.querySelector(".resume-object");
+		if (pdfObject) {
+			pdfObject.addEventListener("error", function () {
+				console.log("PDF object failed to load, showing fallback");
+				const fallback = resumeModal.querySelector(".resume-fallback");
+				if (fallback) {
+					fallback.style.display = "grid";
+				}
+			});
+		}
+	}
+
+	// Persona modal specific event listeners
+	const personaModal = document.getElementById("personaModal");
+	if (personaModal) {
+		// Close button event listener
+		const closeBtn = personaModal.querySelector(".close");
+		if (closeBtn) {
+			closeBtn.addEventListener("click", closePersonaModal);
+		}
+	}
 
 	// Smooth scrolling for navigation links
 	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
