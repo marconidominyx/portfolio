@@ -161,6 +161,52 @@ function zoomResume(direction) {
 	if (resumeImage) resumeImage.style.transform = `scale(${newScale})`;
 }
 
+// Donate Modal Functions
+function openDonateModal() {
+	const modal = document.getElementById("donateModal");
+	if (!modal) return;
+	modal.style.display = "block";
+	modal.offsetHeight;
+	modal.classList.add("show");
+	document.body.style.overflow = "hidden";
+}
+function closeDonateModal() {
+	const modal = document.getElementById("donateModal");
+	if (!modal) return;
+	modal.classList.remove("show");
+	setTimeout(() => (modal.style.display = "none"), 300);
+	document.body.style.overflow = "auto";
+}
+
+function copyFromSelector(selector) {
+	const el = document.querySelector(selector);
+	if (!el) return false;
+	const text = (el.textContent || el.value || "").trim();
+	if (!text) return false;
+	navigator.clipboard
+		.writeText(text)
+		.then(showCopyToast)
+		.catch(() => {
+			// Fallback
+			const tmp = document.createElement("textarea");
+			tmp.value = text;
+			document.body.appendChild(tmp);
+			tmp.select();
+			try {
+				document.execCommand("copy");
+				showCopyToast();
+			} catch (e) {}
+			document.body.removeChild(tmp);
+		});
+	return true;
+}
+function showCopyToast() {
+	const toast = document.getElementById("copyToast");
+	if (!toast) return;
+	toast.classList.add("show");
+	setTimeout(() => toast.classList.remove("show"), 1300);
+}
+
 // Utility Functions
 function updateCopyright() {
 	const yearSpan = document.getElementById("currentYear");
@@ -179,10 +225,30 @@ function setupEventListeners() {
 		}
 	};
 
-	// Modal close on escape key
+	// Crypto network select behavior
+	const networkSelect = document.getElementById("cryptoNetwork");
+	if (networkSelect) {
+		const addresses = {
+			bsc: "0x927e3f1ad89d68c13a50c4e54dc4d5a9eeb8b8f6",
+			trx: "TSkPDn3ii6wrFnKZ4hKBjkoaZfyeU8YkQd",
+			eth: "0x927e3f1ad89d68c13a50c4e54dc4d5a9eeb8b8f6",
+			matic: "0x927e3f1ad89d68c13a50c4e54dc4d5a9eeb8b8f6",
+			sol: "6wHvkK7vHp2K4imMEmk3UHf6y8ZXEDQg6pGeoQBdJLBJ",
+		};
+		const addrSpan = document.getElementById("cryptoAddr");
+		const updateAddr = () => {
+			const key = networkSelect.value;
+			addrSpan.textContent = addresses[key] || "";
+		};
+		networkSelect.addEventListener("change", updateAddr);
+		updateAddr();
+	}
+
+	// Modal close on escape key - include donate
 	document.addEventListener("keydown", function (event) {
 		if (event.key === "Escape") {
 			closeResumeModal();
+			closeDonateModal();
 		}
 	});
 
@@ -227,6 +293,28 @@ function setupEventListeners() {
 				target.scrollIntoView({ behavior: "smooth", block: "start" });
 			}
 		});
+	});
+
+	// Donate toggle button
+	const donateToggle = document.getElementById("donateToggle");
+	if (donateToggle) {
+		donateToggle.addEventListener("click", openDonateModal);
+	}
+
+	// Copy buttons in donate modal
+	document.querySelectorAll(".copy-btn").forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const target = btn.getAttribute("data-copy-target");
+			if (target) copyFromSelector(target);
+		});
+	});
+
+	// Close donate modal on outside click
+	window.addEventListener("click", function (event) {
+		const donateModal = document.getElementById("donateModal");
+		if (event.target === donateModal) {
+			closeDonateModal();
+		}
 	});
 }
 
