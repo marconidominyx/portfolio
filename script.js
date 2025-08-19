@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	updateCopyright();
 	setupEventListeners();
 	setupScrollReveal();
+	initializeCollapsibleSections();
 
 	// Debug: Check if resume modal exists
 	const resumeModal = document.getElementById("resumeModal");
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Theme Functions
 function initializeTheme() {
-	const savedTheme = localStorage.getItem("theme") || "light";
+	const savedTheme = localStorage.getItem("theme") || "dark"; // Changed default to dark
 	applyTheme(savedTheme);
 }
 
@@ -67,7 +68,7 @@ function openResumeModal() {
 	}
 
 	// Determine source from the triggering button if available
-	let src = "Resume.pdf";
+	let src = "Resume New Final.pdf"; // Updated default filename
 	try {
 		// Find the last actively focused resume button
 		const activeBtn = document.activeElement?.classList?.contains("resume-btn")
@@ -213,6 +214,37 @@ function updateCopyright() {
 	if (yearSpan) {
 		yearSpan.textContent = new Date().getFullYear();
 	}
+}
+
+// Collapsible Section Toggle
+function toggleSection(sectionId) {
+	const content = document.getElementById(sectionId + "-content");
+	const toggle = content.previousElementSibling; // the button
+
+	if (content.classList.contains("expanded")) {
+		// Collapse
+		content.classList.remove("expanded");
+		toggle.classList.remove("active");
+	} else {
+		// Expand
+		content.classList.add("expanded");
+		toggle.classList.add("active");
+	}
+}
+
+// Initialize collapsible sections
+function initializeCollapsibleSections() {
+	// Start with sections collapsed
+	const contents = document.querySelectorAll(".collapsible-content");
+	const toggles = document.querySelectorAll(".section-toggle");
+
+	contents.forEach((content) => {
+		content.classList.remove("expanded");
+	});
+
+	toggles.forEach((toggle) => {
+		toggle.classList.remove("active");
+	});
 }
 
 // Event Listeners Setup
