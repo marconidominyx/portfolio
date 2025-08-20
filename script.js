@@ -383,16 +383,22 @@ function setupScrollReveal() {
 	revealEls.forEach((el) => observer.observe(el));
 }
 
-// Scroll to home function
+// Scroll to home function with modal closure
 function scrollToHome() {
 	const homeSection = document.getElementById("home");
 	if (homeSection) {
-		homeSection.scrollIntoView({
-			behavior: "smooth",
-			block: "start",
-		});
-		// Close the donate modal after scrolling
+		// Close any open modals first
+		closeResumeModal();
+		closePersonaModal();
 		closeDonateModal();
+
+		// Wait for modal closing animation to complete, then scroll to home
+		setTimeout(() => {
+			homeSection.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+		}, 350); // Slightly longer than the modal closing animation (300ms)
 	}
 }
 
