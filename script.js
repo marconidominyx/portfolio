@@ -331,7 +331,7 @@ function setupEventListeners() {
 	// Donate toggle button
 	const donateToggle = document.getElementById("donateToggle");
 	if (donateToggle) {
-		donateToggle.addEventListener("click", openDonateModal);
+		donateToggle.addEventListener("click", toggleDonateModal);
 	}
 
 	// Copy buttons in donate modal
@@ -381,4 +381,31 @@ function setupScrollReveal() {
 		}
 	);
 	revealEls.forEach((el) => observer.observe(el));
+}
+
+// Scroll to home function
+function scrollToHome() {
+	const homeSection = document.getElementById("home");
+	if (homeSection) {
+		homeSection.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		});
+		// Close the donate modal after scrolling
+		closeDonateModal();
+	}
+}
+
+// Enhanced donate modal toggle - close if open, open if closed
+function toggleDonateModal() {
+	const modal = document.getElementById("donateModal");
+	if (!modal) return;
+
+	if (modal.classList.contains("show")) {
+		// Modal is open, close it
+		closeDonateModal();
+	} else {
+		// Modal is closed, open it
+		openDonateModal();
+	}
 }
