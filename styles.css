@@ -1216,9 +1216,22 @@ body {
 	align-items: center;
 	gap: 1rem;
 	opacity: 0;
-	transform: translateY(20px);
-	animation: fadeInUp 0.5s ease forwards;
+	transform: translateY(-40px) scale(0.98);
+	opacity: 0;
+	transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+		opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+	animation: modalFadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
 	animation-delay: calc(var(--item-index) * 0.1s);
+	@keyframes modalFadeIn {
+		0% {
+			opacity: 0;
+			transform: translateY(-40px) scale(0.98);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
 	box-shadow: 0 2px 4px var(--shadow-color);
 }
 
@@ -2364,12 +2377,17 @@ body {
 .donate-header {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: flex-end;
 	gap: 1rem;
+	margin-bottom: 1.2rem;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 0.7rem;
 }
 .donate-sub {
 	margin: 0.25rem 0 0;
 	color: var(--text-light);
+	font-size: 1.1rem;
+	font-style: italic;
 }
 .donate-actions {
 	display: flex;
@@ -2414,10 +2432,24 @@ body {
 	padding: 16px;
 	transition: var(--transition);
 	box-shadow: 0 12px 32px -18px var(--shadow-color);
+	opacity: 0;
+	transform: translateY(30px) scale(0.98);
+	animation: cardFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.4s forwards;
+}
+@keyframes cardFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(30px) scale(0.98);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 .donate-card:hover {
-	transform: translateY(-2px);
+	transform: translateY(-4px) scale(1.03);
 	border-color: rgba(16, 163, 127, 0.4);
+	box-shadow: 0 16px 40px -12px var(--shadow-color);
 }
 .card-head {
 	display: flex;
@@ -3824,6 +3856,8 @@ body {
 	padding-top: 1.5rem;
 	border-top: 1px solid var(--border-color);
 	text-align: center;
+	background: rgba(127, 127, 127, 0.04);
+	border-radius: 0 0 14px 14px;
 }
 
 .back-home-btn {
