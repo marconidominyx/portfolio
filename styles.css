@@ -247,6 +247,18 @@ h6 {
 	font-style: italic;
 	display: block;
 	margin-top: 0.5rem;
+	text-align: center;
+	animation: fadeSlideUpSub 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.7s both;
+}
+@keyframes fadeSlideUpSub {
+	0% {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .lead {
@@ -2605,9 +2617,47 @@ body {
 /* OpenAI-like touches */
 .gradient-text {
 	background: linear-gradient(135deg, var(--primary-color), #2bb673);
+	background: linear-gradient(90deg, #ff6a00, #ee0979, #43cea2, #185a9d);
+	background-size: 200% 200%;
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
+	animation: gradientMove 4s ease-in-out infinite;
+}
+/* Animated gradient and entrance for hero title */
+.hero-title-main.gradient-text {
+	font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	margin-bottom: 0.5rem;
+	display: block;
+	text-align: center;
+	animation: gradientMove 4s ease-in-out infinite,
+		fadeSlideUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) 1;
+}
+
+@keyframes gradientMove {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes fadeSlideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 .hero-content h1 {
 	font-weight: 800;
