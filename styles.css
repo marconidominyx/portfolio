@@ -1518,6 +1518,7 @@ body {
 	height: 75vh;
 	position: relative;
 	border: 1px solid var(--border-color);
+	padding: 0;
 }
 .resume-frame {
 	width: 100%;
@@ -1953,6 +1954,7 @@ body {
 	height: 75vh;
 	position: relative;
 	border: 1px solid var(--border-color);
+	padding: 0;
 }
 .resume-object {
 	width: 100%;
@@ -3938,5 +3940,35 @@ body {
 		width: 100%;
 		justify-content: center;
 		padding: 0.8rem 1.2rem;
+	}
+}
+
+/* Responsive resume image */
+.resume-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: contain;
+	object-position: top center;
+	background: var(--card-bg);
+}
+
+@media (max-width: 1024px) {
+	.resume-viewer {
+		max-height: 78vh;
+	}
+}
+
+@media (max-width: 768px) {
+	.resume-viewer {
+		max-height: 72vh;
+	}
+}
+
+@media (max-width: 480px) {
+	.resume-image {
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
 	}
 }

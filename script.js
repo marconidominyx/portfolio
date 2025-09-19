@@ -67,35 +67,45 @@ function openResumeModal() {
 		return;
 	}
 
-	// Determine source from the triggering button if available
-	let src = "Resume New Final.pdf"; // Updated default filename
+	// Sources
+	const imageSrc = "Resume.png"; // display image (updated filename)
+	let pdfSrc = "Resume.pdf"; // downloadable/openable pdf
 	try {
-		// Find the last actively focused resume button
 		const activeBtn = document.activeElement?.classList?.contains("resume-btn")
 			? document.activeElement
 			: document.querySelector(".resume-btn");
 		if (activeBtn && activeBtn.dataset && activeBtn.dataset.resumeSrc) {
-			src = activeBtn.dataset.resumeSrc;
+			pdfSrc = activeBtn.dataset.resumeSrc;
 		}
 	} catch (e) {}
 
-	// Update object data and action links
-	const objectEl = modal.querySelector(".resume-object");
+	// Update viewer (img/object/iframe) and links
+	const viewerEl = modal.querySelector(".resume-object");
 	const downloadLinks = modal.querySelectorAll(
 		'.download-btn[href$=".pdf"], .resume-fallback .download-btn'
 	);
 	const openLinks = modal.querySelectorAll(".open-btn");
-	if (objectEl) objectEl.setAttribute("data", src);
-	downloadLinks.forEach((a) => a.setAttribute("href", src));
-	openLinks.forEach((a) => a.setAttribute("href", src));
+	if (viewerEl) {
+		const tag = viewerEl.tagName.toLowerCase();
+		if (tag === "img") {
+			viewerEl.setAttribute("src", imageSrc);
+			viewerEl.setAttribute("alt", "Resume Preview");
+		} else if (tag === "iframe") {
+			viewerEl.setAttribute("src", pdfSrc);
+		} else {
+			viewerEl.setAttribute("data", pdfSrc);
+		}
+	}
+	downloadLinks.forEach((a) => a.setAttribute("href", pdfSrc));
+	openLinks.forEach((a) => a.setAttribute("href", pdfSrc));
 
-	// iOS Safari commonly blocks inline PDFs — open in new tab
+	// iOS Safari handling: still allow image modal
 	const isIOS =
 		/iPad|iPhone|iPod/.test(navigator.userAgent) ||
 		(navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-	if (isIOS) {
-		window.open(src, "_blank", "noopener");
-		return; // Don't show modal on iOS
+	if (isIOS && viewerEl && viewerEl.tagName.toLowerCase() !== "img") {
+		window.open(pdfSrc, "_blank", "noopener");
+		return;
 	}
 
 	modal.style.display = "block";
