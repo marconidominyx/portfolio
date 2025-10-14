@@ -2658,15 +2658,8 @@ body {
 }
 /* Animated gradient and entrance for hero title */
 .hero-title-main.gradient-text {
-	font-size: clamp(2.2rem, 4.8vw, 3.8rem);
-	font-weight: 700;
-	letter-spacing: -0.03em;
-	line-height: 1.1;
-	margin-bottom: 0.5rem;
-	display: block;
-	text-align: center;
-	animation: gradientMove 4s ease-in-out infinite,
-		fadeSlideUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) 1;
+	/* removed gradient animation for simpler look */
+	animation: none;
 }
 
 @keyframes gradientMove {
@@ -2967,6 +2960,21 @@ body {
 	opacity: 0.95;
 }
 
+/* Simple, elegant embed frame for projects */
+.embed-frame {
+	background: var(--card-bg);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: var(--shadow-md);
+}
+.embed-frame iframe {
+	width: 100%;
+	height: min(70vh, 720px);
+	border: 0;
+	display: block;
+}
+
 /* Spacing under about paragraph */
 .about-text p {
 	margin-bottom: 1rem;
@@ -3167,21 +3175,21 @@ body {
 }
 
 .collapsible-section {
-	background: var(--card-bg);
-	border: 1px solid var(--border-color);
-	border-radius: var(--border-radius);
-	overflow: hidden;
-	box-shadow: var(--shadow-sm);
+	background: transparent; /* blend into page */
+	border: none; /* remove card border */
+	border-radius: 0;
+	overflow: visible;
+	box-shadow: none;
 	transition: var(--transition);
 }
 
 .collapsible-section:hover {
-	box-shadow: var(--shadow-md);
+	box-shadow: none;
 }
 
 .section-toggle {
 	width: 100%;
-	padding: 1.25rem 1.5rem;
+	padding: 0.85rem 0; /* slimmer, transparent */
 	background: transparent;
 	border: none;
 	cursor: pointer;
@@ -3189,12 +3197,17 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	transition: var(--transition);
-	color: var(--text-color);
+	color: inherit;
 	font-family: inherit;
 }
 
 .section-toggle:hover {
-	background: rgba(16, 163, 127, 0.05);
+	background: transparent; /* no fill on hover */
+}
+
+.section-toggle:focus-visible {
+	outline: 2px solid rgba(16, 163, 127, 0.4);
+	outline-offset: 2px;
 }
 
 .toggle-title {
@@ -3202,9 +3215,9 @@ body {
 	align-items: center;
 	gap: 0.75rem;
 	margin: 0;
-	font-size: 1.25rem;
+	font-size: 1.15rem;
 	font-weight: 600;
-	color: var(--text-color);
+	color: var(--text-light); /* subtle by default */
 }
 
 .toggle-title i {
@@ -3216,6 +3229,11 @@ body {
 	color: var(--text-light);
 	font-size: 0.9rem;
 	transition: transform 0.3s ease;
+}
+
+.section-toggle:hover .toggle-title,
+.section-toggle.active .toggle-title {
+	color: var(--text-color);
 }
 
 .section-toggle.active .toggle-icon {
@@ -3376,6 +3394,33 @@ body {
 
 .work-section:last-child {
 	border-bottom: none;
+}
+
+/* Align Skills block spacing with Projects */
+.skills-block {
+	margin-top: 0.5rem;
+}
+
+/* Improve skills pill alignment and wrapping */
+.skills-simple {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem 0.6rem;
+}
+.skills-simple .skill-tag {
+	margin: 0; /* reset inline gaps */
+}
+
+/* Optional subtle divider above skills to separate from projects */
+.skills-block {
+	border-top: 1px solid var(--border-color);
+	padding-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+	.skills-block {
+		padding-top: 1rem;
+	}
 }
 
 .section-subtitle {

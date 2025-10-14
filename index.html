@@ -73,10 +73,8 @@
 			<div class="container">
 				<div class="hero-content">
 					<h1 class="hero-title">
-						<span class="hero-title-main gradient-text"
-							>Ideas. Creativity. Growth.</span
-						>
-						<span class="hero-title-sub">That’s my journey</span>
+						<span class="hero-title-main">Ideas. Creativity. Growth.</span>
+						<span class="hero-title-sub">That’s my journey.</span>
 					</h1>
 					<div class="social-links">
 						<a
@@ -169,27 +167,53 @@
 					</div>
 
 					<!-- Currently Section -->
-					<div class="work-section">
-						<h3 class="section-subtitle">Currently:</h3>
+						<div class="work-section">
+							<h3 class="section-subtitle">Currently:</h3>
 
-						<div class="work-item">
-							<div class="work-header">
-								<h4 class="work-title">Freelancer</h4>
-								<span class="work-meta">Independent</span>
+							<div class="work-item">
+								<div class="work-header">
+									<h4 class="work-title">Unemployed — For hire</h4>
+									<span class="work-meta">Open to opportunities</span>
+								</div>
+								<p class="work-description">
+									I’m hardworking, a fast learner, and thrive in fast-paced
+									environments. I’m used to high pressure as well.
+								</p>
 							</div>
-							<p class="work-description">
-								Providing virtual assistance, creative design, and project
-								management services to help businesses grow and streamline their
-								operations.
-							</p>
 						</div>
-					</div>
 
 					<!-- Previous Work Section -->
 					<div class="work-section">
-						<h3 class="section-subtitle">Projects:</h3>
+						<div class="collapsible-section">
+							<button class="section-toggle" onclick="toggleSection('projects')">
+								<h3 class="toggle-title">
+									<i class="fas fa-folder-open"></i>
+									<span>Projects</span>
+								</h3>
+								<i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+							</button>
+							<div id="projects-content" class="collapsible-content">
+								<div>
 
-						<div class="work-item">
+						<!-- Simon Game (project link) -->
+								<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Simon Game</h4>
+								<a
+									href="https://marconidominyx.github.io/Simon-Game-Challenge/"
+									target="_blank"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								A classic memory game project with clean, minimal UI. Open to
+								play.
+							</p>
+								</div>
+
+								<div class="work-item">
 							<div class="work-header">
 								<h4 class="work-title">Our Story</h4>
 								<a
@@ -206,9 +230,9 @@
 								JavaScript to create a scroll-based narrative experience
 								celebrating modern love.
 							</p>
-						</div>
+								</div>
 
-						<div class="work-item">
+								<div class="work-item">
 							<div class="work-header">
 								<h4 class="work-title">Urian Society</h4>
 								<a
@@ -223,9 +247,9 @@
 								A community platform for gamers, creators, and innovators to
 								connect and collaborate.
 							</p>
-						</div>
+								</div>
 
-						<div class="work-item">
+								<div class="work-item">
 							<div class="work-header">
 								<h4 class="work-title">Pet Adoption App</h4>
 								<a
@@ -257,11 +281,13 @@
 								UI design and wireframing project for OJT students. Handled
 								design, wireframing, and prototyping using Figma.
 							</p>
+								</div>
+							</div>
 						</div>
 					</div>
 
 					<!-- Skills Section (Simplified) -->
-					<div class="work-section">
+					<div class="work-section skills-block">
 						<h3 class="section-subtitle">Skills:</h3>
 						<div class="skills-simple">
 							<span class="skill-tag">Virtual Assistance</span>
@@ -328,14 +354,15 @@
 							>
 						</div>
 					</div>
-					<div class="resume-viewer">
-						<iframe
-							src="./Resume.pdf"
-							class="resume-object"
-							style="width: 100%; height: 80vh; border: none"
-							aria-label="Embedded resume PDF"
-							allowfullscreen
-						></iframe>
+							<div class="resume-viewer">
+								<object
+									data="./Resume.pdf"
+									type="application/pdf"
+									class="resume-object"
+									aria-label="Embedded resume PDF"
+									style="width: 100%; height: 80vh; border: none"
+								>
+								</object>
 						<div class="resume-fallback" style="display: none">
 							<p>PDF preview not available in this browser.</p>
 							<p>You can open the file in a new tab or download it.</p>
@@ -347,8 +374,8 @@
 									justify-content: center;
 								"
 							>
-								<a
-									href="./Resume.pdf"
+									<a
+										href="./Resume.pdf"
 									target="_blank"
 									rel="noopener"
 									class="open-btn"
