@@ -67,45 +67,42 @@ function openResumeModal() {
 		return;
 	}
 
-	// Sources
-	const imageSrc = "Resume.png"; // display image (updated filename)
-	let pdfSrc = "Resume.pdf"; // downloadable/openable pdf
+	// Determine requested viewer (png vs pdf)
+	let requestedSrc = "Resume.pdf";
 	try {
 		const activeBtn = document.activeElement?.classList?.contains("resume-btn")
 			? document.activeElement
 			: document.querySelector(".resume-btn");
 		if (activeBtn && activeBtn.dataset && activeBtn.dataset.resumeSrc) {
-			pdfSrc = activeBtn.dataset.resumeSrc;
+			requestedSrc = activeBtn.dataset.resumeSrc;
 		}
 	} catch (e) {}
 
-	// Update viewer (img/object/iframe) and links
-	const viewerEl = modal.querySelector(".resume-object");
-	const downloadLinks = modal.querySelectorAll(
-		'.download-btn[href$=".pdf"], .resume-fallback .download-btn'
-	);
-	const openLinks = modal.querySelectorAll(".open-btn");
-	if (viewerEl) {
-		const tag = viewerEl.tagName.toLowerCase();
-		if (tag === "img") {
-			viewerEl.setAttribute("src", imageSrc);
-			viewerEl.setAttribute("alt", "Resume Preview");
-		} else if (tag === "iframe") {
-			viewerEl.setAttribute("src", pdfSrc);
-		} else {
-			viewerEl.setAttribute("data", pdfSrc);
-		}
-	}
-	downloadLinks.forEach((a) => a.setAttribute("href", pdfSrc));
-	openLinks.forEach((a) => a.setAttribute("href", pdfSrc));
+	const wantsPng = /\.png$/i.test(requestedSrc);
+	const pdfUrl = "Resume.pdf"; // always use this for open/download
 
-	// iOS Safari handling: still allow image modal
-	const isIOS =
-		/iPad|iPhone|iPod/.test(navigator.userAgent) ||
-		(navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-	if (isIOS && viewerEl && viewerEl.tagName.toLowerCase() !== "img") {
-		window.open(pdfSrc, "_blank", "noopener");
-		return;
+	const pdfFrame = modal.querySelector(".resume-object");
+	const pngImage = modal.querySelector(".resume-image");
+	const downloadLinks = modal.querySelectorAll(".download-btn");
+	const openLinks = modal.querySelectorAll(".open-btn");
+
+	// Update links to PDF
+	downloadLinks.forEach((a) => a.setAttribute("href", pdfUrl));
+	openLinks.forEach((a) => a.setAttribute("href", pdfUrl));
+
+	// Toggle viewer
+	if (wantsPng) {
+		if (pngImage) {
+			pngImage.src = requestedSrc;
+			pngImage.style.display = "block";
+		}
+		if (pdfFrame) pdfFrame.style.display = "none";
+	} else {
+		if (pdfFrame) {
+			pdfFrame.setAttribute("src", pdfUrl);
+			pdfFrame.style.display = "block";
+		}
+		if (pngImage) pngImage.style.display = "none";
 	}
 
 	modal.style.display = "block";

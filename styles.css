@@ -1514,11 +1514,14 @@ body {
 .resume-viewer {
 	background: var(--card-bg);
 	border-radius: var(--border-radius);
-	overflow: hidden;
-	height: 75vh;
+	overflow: auto;
 	position: relative;
 	border: 1px solid var(--border-color);
 	padding: 0;
+	max-height: 86vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .resume-frame {
 	width: 100%;
@@ -2985,12 +2988,12 @@ body {
 /* Responsive resume viewer */
 @media (max-width: 768px) {
 	.resume-viewer {
-		height: 65vh;
+		max-height: 72vh;
 	}
 }
 @media (max-width: 480px) {
 	.resume-viewer {
-		height: 58vh;
+		max-height: 70vh;
 	}
 }
 
@@ -3993,7 +3996,7 @@ body {
 	width: 100%;
 	height: auto;
 	display: block;
-	object-fit: contain;
+	object-fit: contain; /* keep full image visible */
 	object-position: top center;
 	background: var(--card-bg);
 }
