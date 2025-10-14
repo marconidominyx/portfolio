@@ -1,17 +1,17 @@
 /* Import EB Garamond font */
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
 
 /* Variables */
 :root {
-	/* Modern Color Scheme (ChatGPT-inspired) */
-	--primary-color: #10a37f;
-	--primary-dark: #0b7b60;
-	--secondary-color: #202123;
-	--accent-color: #2bb673;
-	--background-color: #f5f7f9;
+	/* Minimal black & white palette */
+	--primary-color: #111111;
+	--primary-dark: #000000;
+	--secondary-color: #111214;
+	--accent-color: #111111;
+	--background-color: #ffffff;
 	--background-dark: #0e1117;
-	--text-color: #0b0f14;
-	--text-light: #4b5563;
+	--text-color: #111111;
+	--text-light: #6b7280;
 	--white: #ffffff;
 	--success: #22c55e;
 	--danger: #ef4444;
@@ -23,25 +23,25 @@
 	--card-bg: #ffffff;
 	--border-color: #e2e8f0;
 	--shadow-color: rgba(0, 0, 0, 0.15);
-	--gradient-primary: linear-gradient(135deg, #10a37f, #2bb673);
+	--gradient-primary: linear-gradient(135deg, #111111, #000000);
 	--animation-timing: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Dark mode variables */
 [data-theme="dark"] {
-	--primary-color: #10a37f;
-	--primary-dark: #0b7b60;
+	--primary-color: #ffffff;
+	--primary-dark: #e6edf3;
 	--secondary-color: #cdd6f4;
-	--accent-color: #2bb673;
+	--accent-color: #ffffff;
 	--text-color: #e6edf3;
-	--background-color: #0e1117;
-	--background-dark: #0b0f14;
+	--background-color: #0b0f14;
+	--background-dark: #090d12;
 	--text-dark: #f8fafc;
-	--text-light: #a1a8b3;
-	--white: #111318;
-	--card-bg: #111318;
-	--border-color: #1f232b;
-	--shadow-color: rgba(0, 0, 0, 0.4);
+	--text-light: #9aa4b2;
+	--white: #0f1318;
+	--card-bg: #111214;
+	--border-color: #1f2933;
+	--shadow-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Reset and Base Styles */
@@ -52,7 +52,8 @@
 }
 
 body {
-	font-family: "EB Garamond", serif;
+	font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto,
+		"Helvetica Neue", Arial, "Noto Sans";
 	line-height: 1.6;
 	color: var(--text-color);
 	background-color: var(--background-color);
@@ -224,7 +225,8 @@ h6 {
 	font-size: clamp(2.5rem, 5vw, 4rem);
 	margin-bottom: 2rem;
 	animation: fadeInUp 1s ease;
-	font-family: "EB Garamond", serif;
+	font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto,
+		"Helvetica Neue", Arial, "Noto Sans";
 	font-weight: 600;
 	letter-spacing: -0.02em;
 	line-height: 1.2;
@@ -237,18 +239,22 @@ h6 {
 	line-height: 1.1;
 	margin-bottom: 0.5rem;
 	display: block;
+	font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto,
+		"Helvetica Neue", Arial, "Noto Sans";
 }
 
 .hero-title-sub {
-	font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-	font-weight: 400;
+	font-size: clamp(1.1rem, 2vw, 1.3rem);
+	font-weight: 500;
 	color: var(--text-light);
 	opacity: 0.9;
-	font-style: italic;
+	font-style: normal; /* no italic */
 	display: block;
-	margin-top: 0.5rem;
+	margin-top: 0.35rem;
 	text-align: center;
 	animation: fadeSlideUpSub 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.7s both;
+	font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto,
+		"Helvetica Neue", Arial, "Noto Sans";
 }
 @keyframes fadeSlideUpSub {
 	0% {
@@ -304,10 +310,10 @@ h6 {
 
 .social-icon:hover {
 	color: var(--white);
-	background: var(--gradient-primary);
+	background: var(--primary-color);
 	border-color: transparent;
 	transform: translateY(-3px) scale(1.05);
-	box-shadow: 0 12px 24px -8px rgba(16, 163, 127, 0.4);
+	box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.25);
 }
 
 /* CTA Section - if you want to add it back later */
@@ -325,7 +331,8 @@ h6 {
 	background: transparent;
 	border: 2px solid var(--primary-color);
 	color: var(--primary-color);
-	font-family: "EB Garamond", serif;
+	font-family: "GeistSans", "GeistSans Fallback", system-ui, -apple-system,
+		Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
 	font-size: 1.1rem;
 	font-weight: 500;
 	border-radius: 50px;
@@ -1021,18 +1028,18 @@ h6 {
 	transition: var(--transition);
 }
 .theme-toggle:hover {
-	background: var(--gradient-primary);
+	background: var(--primary-color);
 	border-color: transparent;
 	color: var(--white);
-	transform: rotate(10deg);
-	box-shadow: 0 10px 25px -12px rgba(16, 163, 127, 0.6);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.35);
 }
 .theme-toggle i {
 	font-size: 1.25rem;
 	transition: transform 0.3s ease;
 }
 .theme-toggle:hover i {
-	transform: rotate(-10deg);
+	transform: scale(1.05);
 }
 
 /* Mobile Optimization */
@@ -1379,7 +1386,8 @@ body {
 	color: var(--primary-color);
 	padding: 0.9rem 1.8rem;
 	border-radius: 50px;
-	font-family: "EB Garamond", serif;
+	font-family: "GeistSans", "GeistSans Fallback", system-ui, -apple-system,
+		Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
 	font-size: 1.1rem;
 	font-weight: 500;
 	cursor: pointer;
@@ -1400,7 +1408,7 @@ body {
 	left: -100%;
 	width: 100%;
 	height: 100%;
-	background: var(--gradient-primary);
+	background: var(--primary-color);
 	transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	z-index: -1;
 }
@@ -1410,7 +1418,7 @@ body {
 	color: var(--white);
 	border-color: transparent;
 	transform: translateY(-2px);
-	box-shadow: 0 12px 28px -8px rgba(16, 163, 127, 0.4);
+	box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.35);
 }
 
 .resume-btn:hover::before,
@@ -2301,11 +2309,11 @@ body {
 }
 
 .donate-toggle:hover {
-	background: var(--gradient-primary);
+	background: var(--primary-color);
 	border-color: transparent;
 	color: var(--white);
-	transform: rotate(10deg);
-	box-shadow: 0 10px 25px -12px rgba(16, 163, 127, 0.6);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.35);
 }
 
 .donate-toggle:active {
@@ -2653,13 +2661,8 @@ body {
 
 /* OpenAI-like touches */
 .gradient-text {
-	background: linear-gradient(135deg, var(--primary-color), #2bb673);
-	background: linear-gradient(90deg, #ff6a00, #ee0979, #43cea2, #185a9d);
-	background-size: 200% 200%;
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-	animation: gradientMove 4s ease-in-out infinite;
+	background: none;
+	color: var(--text-color);
 }
 /* Animated gradient and entrance for hero title */
 .hero-title-main.gradient-text {
