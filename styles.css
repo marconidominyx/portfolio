@@ -1,5 +1,5 @@
-/* Import EB Garamond font */
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
+/* Import Outfit font */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 
 /* Variables */
 :root {
@@ -314,65 +314,6 @@ h6 {
 	border-color: transparent;
 	transform: translateY(-3px) scale(1.05);
 	box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.25);
-}
-
-/* CTA Section - if you want to add it back later */
-.cta-section {
-	margin-top: 2rem;
-	opacity: 0;
-	animation: fadeInUp 1s ease 0.4s forwards;
-}
-
-.cta-button {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.75rem;
-	padding: 1rem 2rem;
-	background: transparent;
-	border: 2px solid var(--primary-color);
-	color: var(--primary-color);
-	font-family: "GeistSans", "GeistSans Fallback", system-ui, -apple-system,
-		Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-	font-size: 1.1rem;
-	font-weight: 500;
-	border-radius: 50px;
-	text-decoration: none;
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	position: relative;
-	overflow: hidden;
-	backdrop-filter: blur(10px);
-}
-
-.cta-button::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	background: var(--gradient-primary);
-	transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	z-index: -1;
-}
-
-.cta-button:hover {
-	color: var(--white);
-	border-color: transparent;
-	transform: translateY(-2px);
-	box-shadow: 0 12px 28px -8px rgba(16, 163, 127, 0.4);
-}
-
-.cta-button:hover::before {
-	left: 0;
-}
-
-.cta-button i {
-	font-size: 1rem;
-	transition: transform 0.3s ease;
-}
-
-.cta-button:hover i {
-	transform: translateX(3px);
 }
 
 /* Responsive typography improvements */
@@ -1098,39 +1039,6 @@ body {
 .modal-content {
 	background-color: var(--card-bg);
 	color: var(--text-color);
-}
-
-/* Add footer styles */
-.footer {
-	background-color: var(--card-bg);
-	padding: 2rem 0;
-	border-top: 1px solid var(--border-color);
-	text-align: center;
-}
-
-.copyright {
-	color: var(--text-light);
-	font-size: 0.9rem;
-}
-
-.footer-description {
-	color: var(--text-light);
-	font-size: 1.1rem;
-	margin-bottom: 2rem;
-}
-
-.skills-footer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.5rem;
-	margin-top: 1.5rem;
-}
-
-.skills-footer .skill-tag {
-	background-color: var(--primary-color);
-	opacity: 0.9;
-	transform: scale(0.9);
 }
 
 /* Update blog card styles */
@@ -2270,8 +2178,6 @@ body {
 	border-radius: 3px;
 }
 
-/* Ground characters section removed for better mobile compatibility */
-
 /* Floating theme toggle */
 .floating-toggle {
 	position: fixed;
@@ -2659,29 +2565,6 @@ body {
 	}
 }
 
-/* OpenAI-like touches */
-.gradient-text {
-	background: none;
-	color: var(--text-color);
-}
-/* Animated gradient and entrance for hero title */
-.hero-title-main.gradient-text {
-	/* removed gradient animation for simpler look */
-	animation: none;
-}
-
-@keyframes gradientMove {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 @keyframes fadeSlideUp {
 	0% {
 		opacity: 0;
@@ -2697,11 +2580,6 @@ body {
 	letter-spacing: -0.02em;
 	line-height: 1.15;
 }
-.cta-button {
-	border: 1px solid rgba(16, 163, 127, 0.4);
-}
-
-/* Ground characters animations removed for better mobile compatibility */
 
 /* Typography scales */
 @media (max-width: 1024px) {
@@ -3592,103 +3470,11 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
-body {
-	font-family: "EB Garamond", serif;
-	line-height: 1.6;
-	color: var(--text-color);
-	background-color: var(--background-color);
-	transition: background-color 0.3s ease, color 0.3s ease;
-	overflow-x: hidden; /* Prevent horizontal scroll */
-	min-height: 100vh;
-}
-
-/* Improved container responsiveness */
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 1.5rem;
-	width: 100%;
-}
-
-/* Enhanced mobile navigation */
-@media (max-width: 768px) {
-	.container {
-		padding: 0 1rem;
-	}
-
-	.floating-toggle {
-		top: 12px;
-		right: 12px;
-		width: 42px;
-		height: 42px;
-	}
-
-	.donate-toggle {
-		right: 64px;
-	}
-
-	.theme-toggle i,
-	.donate-toggle i {
-		font-size: 1.1rem;
-	}
-}
-
-/* Mobile-first modal improvements */
-.modal-content {
-	background-color: var(--card-bg);
-	margin: 2% auto;
-	padding: 1.5rem;
-	width: 95%;
-	max-width: 900px;
-	border-radius: var(--border-radius);
-	position: relative;
-	color: var(--text-color);
-	border: 1px solid var(--border-color);
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-	transform: translateY(-20px);
-	transition: transform 0.3s ease;
-	max-height: 95vh;
-	overflow: auto;
-}
-
-@media (max-width: 768px) {
-	.modal-content {
-		margin: 1% auto;
-		padding: 1rem;
-		width: 98%;
-		max-height: 98vh;
-	}
-
-	.resume-viewer {
-		height: 60vh;
-	}
-
-	.persona-viewer {
-		max-height: 70vh;
-		overflow: auto;
-	}
-}
-
-@media (max-width: 480px) {
-	.modal-content {
-		width: 100%;
-		height: 100vh;
-		margin: 0;
-		border-radius: 0;
-		max-height: 100vh;
-	}
-
-	.resume-viewer {
-		height: calc(100vh - 120px);
-	}
-}
-
 /* Touch-friendly interactions */
 @media (hover: none) and (pointer: coarse) {
 	.social-icon:hover,
 	.resume-btn:hover,
-	.persona-btn:hover,
-	.cta-button:hover {
+	.persona-btn:hover {
 		transform: none;
 	}
 
@@ -3696,38 +3482,6 @@ body {
 	.resume-btn:active,
 	.persona-btn:active {
 		transform: scale(0.95);
-	}
-}
-
-/* Improved section spacing for mobile */
-.section {
-	padding: 4rem 0;
-	min-height: auto;
-}
-
-@media (max-width: 768px) {
-	.section {
-		padding: 3rem 0;
-	}
-
-	.about-content-simple {
-		padding: 1.5rem 0;
-	}
-
-	.work-section {
-		margin-bottom: 2rem;
-		padding-bottom: 1.5rem;
-	}
-}
-
-@media (max-width: 480px) {
-	.section {
-		padding: 2rem 0;
-	}
-
-	.work-section {
-		margin-bottom: 1.5rem;
-		padding-bottom: 1rem;
 	}
 }
 
@@ -3747,42 +3501,6 @@ body {
 
 	.section-subtitle {
 		font-size: 1.1rem;
-	}
-}
-
-/* Improved form and input responsiveness */
-.network-select {
-	width: 100%;
-	padding: 0.55rem 0.7rem;
-	border: 1px solid var(--border-color);
-	background-color: var(--card-bg);
-	color: var(--text-color);
-	border-radius: 10px;
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	font-size: 16px; /* Prevents zoom on iOS */
-}
-
-/* Enhanced donation modal mobile experience */
-@media (max-width: 560px) {
-	.donate-grid {
-		grid-template-columns: 1fr;
-		gap: 1rem;
-	}
-
-	.donate-header {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 1rem;
-	}
-
-	.donate-modal {
-		max-height: 95vh;
-	}
-
-	.donate-container {
-		padding-right: 0;
 	}
 }
 
@@ -3822,88 +3540,7 @@ body {
 	}
 }
 
-.back-home-btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.75rem;
-	background: transparent;
-	border: 2px solid var(--primary-color);
-	color: var(--primary-color);
-	padding: 0.8rem 1.5rem;
-	border-radius: 50px;
-	font-family: "EB Garamond", serif;
-	font-size: 1rem;
-	font-weight: 500;
-	cursor: pointer;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	position: relative;
-	overflow: hidden;
-	backdrop-filter: blur(10px);
-}
-
-.back-home-btn::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	background: var(--gradient-primary);
-	transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	z-index: -1;
-}
-
-.back-home-btn:hover {
-	color: var(--white);
-	border-color: transparent;
-	transform: translateY(-2px);
-	box-shadow: 0 8px 20px -8px rgba(16, 163, 127, 0.4);
-}
-
-.back-home-btn:hover::before {
-	left: 0;
-}
-
-.back-home-btn i {
-	font-size: 1rem;
-	transition: transform 0.3s ease;
-}
-
-.back-home-btn:hover i {
-	transform: scale(1.1);
-}
-
-.back-home-btn:active {
-	transform: scale(0.95);
-}
-
-/* Mobile responsiveness for back home button */
-@media (max-width: 768px) {
-	.donate-footer {
-		margin-top: 1.5rem;
-		padding-top: 1rem;
-	}
-
-	.back-home-btn {
-		padding: 0.7rem 1.3rem;
-		font-size: 0.95rem;
-	}
-}
-
-@media (max-width: 480px) {
-	.donate-footer {
-		margin-top: 1rem;
-		padding-top: 0.75rem;
-	}
-
-	.back-home-btn {
-		width: 100%;
-		justify-content: center;
-		padding: 0.8rem 1.2rem;
-	}
-}
-
-/* Modal footer and back to home button - shared across all modals */
+/* Modal footer and back to home button */
 .modal-footer {
 	margin-top: 2rem;
 	padding-top: 1.5rem;
@@ -3922,7 +3559,8 @@ body {
 	color: var(--primary-color);
 	padding: 0.8rem 1.5rem;
 	border-radius: 50px;
-	font-family: "EB Garamond", serif;
+	font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto,
+		"Helvetica Neue", Arial, "Noto Sans";
 	font-size: 1rem;
 	font-weight: 500;
 	cursor: pointer;

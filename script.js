@@ -1,28 +1,11 @@
 // Theme Management
 document.addEventListener("DOMContentLoaded", () => {
-	console.log("DOM loaded, initializing...");
 	initializeTheme();
 	setupThemeToggle();
 	updateCopyright();
 	setupEventListeners();
 	setupScrollReveal();
 	initializeCollapsibleSections();
-
-	// Debug: Check if resume modal exists
-	const resumeModal = document.getElementById("resumeModal");
-	if (resumeModal) {
-		console.log("Resume modal found:", resumeModal);
-	} else {
-		console.error("Resume modal not found!");
-	}
-
-	// Debug: Check if resume button exists
-	const resumeBtn = document.querySelector(".resume-btn");
-	if (resumeBtn) {
-		console.log("Resume button found:", resumeBtn);
-	} else {
-		console.error("Resume button not found!");
-	}
 });
 
 // Theme Functions
@@ -60,12 +43,8 @@ function toggleTheme() {
 
 // Resume Modal Functions
 function openResumeModal() {
-	console.log("Opening resume modal...");
 	const modal = document.getElementById("resumeModal");
-	if (!modal) {
-		console.error("Resume modal element not found");
-		return;
-	}
+	if (!modal) return;
 
 	// Determine requested viewer (png vs pdf)
 	let requestedSrc = "Resume.pdf";
@@ -79,7 +58,7 @@ function openResumeModal() {
 	} catch (e) {}
 
 	const wantsPng = /\.png$/i.test(requestedSrc);
-	const pdfUrl = "Resume.pdf"; // always use this for open/download
+	const pdfUrl = "Resume.pdf";
 
 	const pdfFrame = modal.querySelector(".resume-object");
 	const pngImage = modal.querySelector(".resume-image");
@@ -106,67 +85,42 @@ function openResumeModal() {
 	}
 
 	modal.style.display = "block";
-	modal.offsetHeight; // reflow
+	modal.offsetHeight;
 	modal.classList.add("show");
 	document.body.style.overflow = "hidden";
-	console.log("Modal opened successfully");
 }
 
 function closeResumeModal() {
-	console.log("Closing resume modal...");
 	const modal = document.getElementById("resumeModal");
 	if (modal) {
 		modal.classList.remove("show");
-		// Wait for animation to complete before hiding
 		setTimeout(() => {
 			modal.style.display = "none";
 		}, 300);
 		document.body.style.overflow = "auto";
-		console.log("Modal closed successfully");
 	}
 }
 
 // Persona Modal Functions
 function openPersonaModal() {
-	console.log("Opening persona modal...");
 	const modal = document.getElementById("personaModal");
 	if (modal) {
 		modal.style.display = "block";
-		// Trigger reflow to ensure display: block is applied
 		modal.offsetHeight;
 		modal.classList.add("show");
 		document.body.style.overflow = "hidden";
-		console.log("Persona modal opened successfully");
-	} else {
-		console.error("Persona modal element not found");
 	}
 }
 
 function closePersonaModal() {
-	console.log("Closing persona modal...");
 	const modal = document.getElementById("personaModal");
 	if (modal) {
 		modal.classList.remove("show");
-		// Wait for animation to complete before hiding
 		setTimeout(() => {
 			modal.style.display = "none";
 		}, 300);
 		document.body.style.overflow = "auto";
-		console.log("Persona modal closed successfully");
 	}
-}
-
-function zoomResume(direction) {
-	const resumeImage = document.querySelector(".resume-image");
-	const currentScale =
-		parseFloat(
-			(resumeImage?.style.transform || "")
-				.replace("scale(", "")
-				.replace(")", "")
-		) || 1;
-	const newScale =
-		direction === "in" ? currentScale + 0.2 : Math.max(0.5, currentScale - 0.2);
-	if (resumeImage) resumeImage.style.transform = `scale(${newScale})`;
 }
 
 // Donate Modal Functions
@@ -292,32 +246,18 @@ function setupEventListeners() {
 		}
 	});
 
-	// Resume modal specific event listeners
+	// Resume modal close button
 	const resumeModal = document.getElementById("resumeModal");
 	if (resumeModal) {
-		// Close button event listener
 		const closeBtn = resumeModal.querySelector(".close");
 		if (closeBtn) {
 			closeBtn.addEventListener("click", closeResumeModal);
 		}
-
-		// PDF object error handling
-		const pdfObject = resumeModal.querySelector(".resume-object");
-		if (pdfObject) {
-			pdfObject.addEventListener("error", function () {
-				console.log("PDF object failed to load, showing fallback");
-				const fallback = resumeModal.querySelector(".resume-fallback");
-				if (fallback) {
-					fallback.style.display = "grid";
-				}
-			});
-		}
 	}
 
-	// Persona modal specific event listeners
+	// Persona modal close button
 	const personaModal = document.getElementById("personaModal");
 	if (personaModal) {
-		// Close button event listener
 		const closeBtn = personaModal.querySelector(".close");
 		if (closeBtn) {
 			closeBtn.addEventListener("click", closePersonaModal);
