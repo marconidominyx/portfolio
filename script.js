@@ -42,47 +42,13 @@ function toggleTheme() {
 }
 
 // Resume Modal Functions
+// Resume Modal Functions
 function openResumeModal() {
 	const modal = document.getElementById("resumeModal");
 	if (!modal) return;
 
-	// Determine requested viewer (png vs pdf)
-	let requestedSrc = "Resume.pdf";
-	try {
-		const activeBtn = document.activeElement?.classList?.contains("resume-btn")
-			? document.activeElement
-			: document.querySelector(".resume-btn");
-		if (activeBtn && activeBtn.dataset && activeBtn.dataset.resumeSrc) {
-			requestedSrc = activeBtn.dataset.resumeSrc;
-		}
-	} catch (e) {}
-
-	const wantsPng = /\.png$/i.test(requestedSrc);
-	const pdfUrl = "Resume.pdf";
-
-	const pdfFrame = modal.querySelector(".resume-object");
-	const pngImage = modal.querySelector(".resume-image");
-	const downloadLinks = modal.querySelectorAll(".download-btn");
-	const openLinks = modal.querySelectorAll(".open-btn");
-
-	// Update links to PDF
-	downloadLinks.forEach((a) => a.setAttribute("href", pdfUrl));
-	openLinks.forEach((a) => a.setAttribute("href", pdfUrl));
-
-	// Toggle viewer
-	if (wantsPng) {
-		if (pngImage) {
-			pngImage.src = requestedSrc;
-			pngImage.style.display = "block";
-		}
-		if (pdfFrame) pdfFrame.style.display = "none";
-	} else {
-		if (pdfFrame) {
-			pdfFrame.setAttribute("src", pdfUrl);
-			pdfFrame.style.display = "block";
-		}
-		if (pngImage) pngImage.style.display = "none";
-	}
+	// Default to PDF view
+	switchResumeView("pdf");
 
 	modal.style.display = "block";
 	modal.offsetHeight;
@@ -98,6 +64,25 @@ function closeResumeModal() {
 			modal.style.display = "none";
 		}, 300);
 		document.body.style.overflow = "auto";
+	}
+}
+
+function switchResumeView(mode) {
+	const pdfFrame = document.getElementById("resumePdfFrame");
+	const imgView = document.getElementById("resumeImgView");
+	const btnPdf = document.getElementById("btnViewPdf");
+	const btnImg = document.getElementById("btnViewImg");
+
+	if (mode === "pdf") {
+		if (pdfFrame) pdfFrame.style.display = "block";
+		if (imgView) imgView.style.display = "none";
+		if (btnPdf) btnPdf.classList.add("active");
+		if (btnImg) btnImg.classList.remove("active");
+	} else {
+		if (pdfFrame) pdfFrame.style.display = "none";
+		if (imgView) imgView.style.display = "block";
+		if (btnPdf) btnPdf.classList.remove("active");
+		if (btnImg) btnImg.classList.add("active");
 	}
 }
 

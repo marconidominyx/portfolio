@@ -191,6 +191,22 @@
 							</button>
 							<div id="projects-content" class="collapsible-content">
 								<div>
+									<!-- FSUU Capstone Project -->
+									<div class="work-item">
+										<div class="work-header">
+											<h4 class="work-title">FSUU Employee Profile System</h4>
+											<a
+												href="https://fsuu-dms.xyz/login"
+												target="_blank"
+												class="work-link"
+											>
+												<i class="fas fa-external-link-alt"></i>
+											</a>
+										</div>
+										<p class="work-description">
+											A centralized web-based system for improving Father Saturnino Urios University employee profile management and monitoring. Capstone project.
+										</p>
+									</div>
 
 						<!-- Simon Game (project link) -->
 								<div class="work-item">
@@ -350,47 +366,47 @@
 		<!-- Resume Modal -->
 		<div id="resumeModal" class="modal">
 			<div class="modal-content resume-modal">
-				<span class="close" onclick="closeResumeModal()">&times;</span>
+				<div class="modal-header-row">
+					<h2>My Resume</h2>
+					<button class="close-modal-btn" onclick="closeResumeModal()" aria-label="Close modal">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				
 				<div class="resume-container">
-					<div class="resume-header">
-						<h2>My Resume</h2>
-						<div class="resume-actions">
-							<a
-								href="Resume.pdf"
-								target="_blank"
-								rel="noopener"
-								class="open-btn"
-							>
-								<i class="fas fa-up-right-from-square"></i
-								><span>Open in new tab</span>
+					<div class="resume-controls">
+						<div class="view-toggles">
+							<button class="toggle-btn active" onclick="switchResumeView('pdf')" id="btnViewPdf">
+								<i class="fas fa-file-pdf"></i> PDF
+							</button>
+							<button class="toggle-btn" onclick="switchResumeView('image')" id="btnViewImg">
+								<i class="fas fa-image"></i> Image
+							</button>
+						</div>
+						<div class="action-buttons">
+							<a href="Resume.pdf" target="_blank" class="action-btn secondary">
+								<i class="fas fa-external-link-alt"></i> Open New Tab
 							</a>
-							<a href="Resume.pdf" download class="download-btn"
-								><i class="fas fa-file-pdf"></i><span>Download PDF</span></a
-							>
+							<a href="Resume.pdf" download class="action-btn primary">
+								<i class="fas fa-download"></i> Download PDF
+							</a>
 						</div>
 					</div>
+
 					<div class="resume-viewer">
 						<iframe
 							src="./Resume.pdf"
 							class="resume-object"
-							style="width: 100%; height: 80vh; border: none"
-							aria-label="Embedded resume PDF"
-							allowfullscreen
+							id="resumePdfFrame"
+							title="Resume PDF"
 						></iframe>
 						<img
 							src="Resume.png"
-							alt="Resume preview"
+							alt="Resume Preview"
 							class="resume-image"
+							id="resumeImgView"
 							style="display: none"
 						/>
-					</div>
-
-					<!-- Back to Home Button -->
-					<div class="modal-footer">
-						<button class="back-home-btn" onclick="scrollToHome()">
-							<i class="fas fa-home"></i>
-							<span>Back to Home</span>
-						</button>
 					</div>
 				</div>
 			</div>
