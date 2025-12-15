@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dominyx | Nomad</title>
+		<link rel="icon" href="../web3%20profile.png" type="image/png" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<!-- Floating Theme Toggle -->
+		<button
+			id="themeToggle"
+			class="theme-toggle floating-toggle"
+			aria-label="Toggle Dark Mode"
+		>
+			<i class="fas fa-moon"></i>
+		</button>
+
+		<!-- Floating Donate Toggle -->
+		<button
+			id="donateToggle"
+			class="donate-toggle floating-toggle"
+			aria-label="Open Donate Modal"
+			title="Support my work"
+		>
+			<i class="fas fa-hand-holding-heart"></i>
+		</button>
+
+		<!-- Home Section -->
+		<section id="home" class="section reveal-up">
+			<!-- Space Scene (dark mode only) -->
+			<div class="space-scene" aria-hidden="true">
+				<div class="stars"></div>
+				<div class="moon"></div>
+				<div class="rocket"><i class="fas fa-rocket"></i></div>
+				<div class="astronaut"><i class="fas fa-user-astronaut"></i></div>
+			</div>
+			<!-- Day Scene (light mode only) -->
+			<div class="day-scene" aria-hidden="true">
+				<div class="sun"></div>
+				<div class="airplane"><i class="fas fa-plane"></i></div>
+				<!-- UP-style house with balloons -->
+				<div class="up-house">
+					<div class="balloons">
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+						<span class="balloon"></span>
+					</div>
+					<div class="house">
+						<div class="roof"></div>
+						<div class="body">
+							<div class="window w1"></div>
+							<div class="window w2"></div>
+							<div class="door"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="hero-content">
+					<h1 class="hero-title">
+						<span class="hero-title-main">Simple days, quiet growth.</span>
+						<span class="hero-title-sub">That’s how I live.</span>
+					</h1>
+					<div class="social-links">
+						<a
+							href="https://github.com/marconidominyx"
+							class="social-icon"
+							target="_blank"
+							rel="noopener noreferrer"
+							><i class="fab fa-github"></i
+						></a>
+						<a
+							href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/"
+							class="social-icon"
+							target="_blank"
+							rel="noopener noreferrer"
+							><i class="fab fa-linkedin"></i
+						></a>
+						<a
+							href="https://www.tiktok.com/@marconidominyx"
+							class="social-icon"
+							target="_blank"
+							rel="noopener noreferrer"
+							><i class="fab fa-tiktok"></i
+						></a>
+						<a
+							href="https://www.facebook.com/MarconiDominyx/"
+							class="social-icon"
+							target="_blank"
+							rel="noopener noreferrer"
+							><i class="fab fa-facebook"></i
+						></a>
+						<a
+							href="https://www.youtube.com/@MarconiDominyx"
+							class="social-icon"
+							target="_blank"
+							rel="noopener noreferrer"
+							><i class="fab fa-youtube"></i
+						></a>
+						<a
+							href="https://www.instagram.com/marconidominyx/"
+							class="social-icon"
+							target="_blank"
+							rel="noopener noreferrer"
+							><i class="fab fa-instagram"></i
+						></a>
+						<a
+							href="mailto:marconidominyx@gmail.com"
+							class="social-icon"
+							title="Email Me"
+							><i class="fas fa-envelope"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about" class="section reveal-up">
+			<div class="container">
+				<div class="about-content-simple">
+					<div class="profile-section">
+						<div class="profile-image">
+							<img src="photo_2025-04-20_00-02-07.jpg" alt="Marconi Dominyx" />
+						</div>
+						<h1 class="profile-name">Marconi Dominyx</h1>
+					</div>
+
+					<div class="profile-description">
+						<p>This is me.</p>
+						I take life one thing at a time. I work hard on what’s in front of me and find peace in motion, whether I’m biking through the streets or playing soccer with friends. I bring my camera to catch the quiet beauty around me. At home, I unwind with variety shows, and when the rain starts to pour, I like to sit still and just listen. <br><br>
+
+						I don’t have much, but I’m working toward a life that lasts. Everything I do is for the people I love and for the version of myself I’m still becoming.
+						<div class="profile-actions">
+						<button
+								type="button"
+								class="resume-btn"
+								aria-controls="resumeModal"
+								onclick="openResumeModal()"
+							>
+								<i class="fas fa-file-pdf"></i>
+								<span>Resume</span>
+							</button>
+							<button
+								type="button"
+								class="persona-btn"
+								aria-controls="personaModal"
+								onclick="openPersonaModal()"
+							>
+								<i class="fas fa-user-circle"></i>
+								<span>Persona Page</span>
+							</button>
+						</div>
+					</div>
+
+					<!-- Currently Section -->
+						<div class="work-section">
+							<h3 class="section-subtitle">Currently:</h3>
+
+							<div class="work-item">
+								<div class="work-header">
+									<h4 class="work-title">Unemployed - For hire</h4>
+									<span class="work-meta">Open to opportunities</span>
+								</div>
+								<p class="work-description">
+									I’m hardworking, a fast learner, and thrive in fast-paced
+									environments. I’m used to high pressure as well.
+								</p>
+							</div>
+						</div>
+
+					<!-- Previous Work Section -->
+					<div class="work-section">
+						<div class="collapsible-section">
+							<button class="section-toggle" onclick="toggleSection('projects')">
+								<h3 class="toggle-title">
+									<i class="fas fa-folder-open"></i>
+									<span>Projects</span>
+								</h3>
+								<i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+							</button>
+							<div id="projects-content" class="collapsible-content">
+								<div>
+									<!-- FSUU Capstone Project -->
+									<div class="work-item">
+										<div class="work-header">
+											<h4 class="work-title">FSUU Employee Profile System</h4>
+											<a
+												href="https://fsuu-dms.xyz/login"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="work-link"
+											>
+												<i class="fas fa-external-link-alt"></i>
+											</a>
+										</div>
+										<p class="work-description">
+											A centralized web-based system for improving Father Saturnino Urios University employee profile management and monitoring. Capstone project.
+										</p>
+									</div>
+
+						<!-- Simon Game (project link) -->
+								<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Simon Game</h4>
+								<a
+									href="https://marconidominyx.github.io/Simon-Game-Challenge/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								A classic memory game project with clean, minimal UI. Open to
+								play.
+							</p>
+								</div>
+
+								<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Our Story</h4>
+								<a
+									href="https://marconidominyx.github.io/ourstory/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								An intimate digital love story chronicling eight months of
+								connection, growth, and commitment. Built with HTML, CSS, and
+								JavaScript to create a scroll-based narrative experience
+								celebrating modern love.
+							</p>
+								</div>
+
+								<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Urian Society</h4>
+								<a
+									href="https://marconidominyx.github.io/urians/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								A community platform for gamers, creators, and innovators to
+								connect and collaborate.
+							</p>
+								</div>
+
+								<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Pet Adoption App</h4>
+								<a
+									href="https://www.figma.com/proto/gVRQK2UMuh1iM31yzWmFsP/Pet-Adoption?node-id=2-96&p=f&t=ifY8d1PpRsyTpa7c-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A96&show-proto-sidebar=1"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								A Figma prototype for a pet adoption application, designed and
+								prototyped in just 5 hours.
+							</p>
+						</div>
+
+						<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Oasis Pets - Pet Adoption Website</h4>
+								<a
+									href="https://github.com/marconidominyx/pet-adoption"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								A clean, Microsoft-style pet adoption website built with React
+								and Vite. Responsive layout, pet gallery with filters, and
+								modern components.
+							</p>
+						</div>
+
+						<div class="work-item">
+							<div class="work-header">
+								<h4 class="work-title">Diosys UI System</h4>
+								<a
+									href="https://www.figma.com/proto/Rf8CZSmak0ldmO9C6X1zQO/DIOSYS-UI?node-id=2-11&p=f&t=f9cCI0ic4RcTVPGV-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A11"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="work-link"
+								>
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+							<p class="work-description">
+								UI design and wireframing project for OJT students. Handled
+								design, wireframing, and prototyping using Figma.
+							</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Skills Section (Simplified) -->
+					<div class="work-section skills-block">
+						<h3 class="section-subtitle">Skills:</h3>
+						<div class="skills-simple">
+							<span class="skill-tag">Virtual Assistance</span>
+							<span class="skill-tag">Graphic Design</span>
+							<span class="skill-tag">Project Management</span>
+							<span class="skill-tag">Content Creation</span>
+							<span class="skill-tag">Figma</span>
+							<span class="skill-tag">Canva</span>
+							<span class="skill-tag">Notion</span>
+							<span class="skill-tag">Community Management</span>
+						</div>
+					</div>
+
+					<!-- Contact Section -->
+					<div class="work-section">
+						<h3 class="section-subtitle">Contact:</h3>
+						<div class="contact-links">
+							<a href="mailto:marconidominyx@gmail.com" class="contact-link"
+								>Email</a
+							>
+							<a
+								href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="contact-link"
+								>LinkedIn</a
+							>
+							<a
+								href="https://github.com/marconidominyx"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="contact-link"
+								>GitHub</a
+							>
+							<a
+								href="https://www.instagram.com/marconidominyx/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="contact-link"
+								>Instagram</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Resume Modal -->
+		<div id="resumeModal" class="modal">
+			<div class="modal-content resume-modal">
+				<div class="modal-header-row">
+					<h2>My Resume</h2>
+					<button class="close-modal-btn" onclick="closeResumeModal()" aria-label="Close modal">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				
+				<div class="resume-container">
+					<div class="resume-controls">
+						<div class="view-toggles">
+							<button class="toggle-btn active" onclick="switchResumeView('pdf')" id="btnViewPdf">
+								<i class="fas fa-file-pdf"></i> PDF
+							</button>
+							<button class="toggle-btn" onclick="switchResumeView('image')" id="btnViewImg">
+								<i class="fas fa-image"></i> Image
+							</button>
+						</div>
+						<div class="action-buttons">
+							<a href="Resume.pdf" target="_blank" class="action-btn secondary">
+								<i class="fas fa-external-link-alt"></i> Open New Tab
+							</a>
+							<a href="Resume.pdf" download class="action-btn primary">
+								<i class="fas fa-download"></i> Download PDF
+							</a>
+						</div>
+					</div>
+
+					<div class="resume-viewer">
+						<iframe
+							class="resume-object"
+							id="resumePdfFrame"
+							title="Resume PDF"
+						></iframe>
+						<img
+							src="Resume.png"
+							alt="Resume Preview"
+							class="resume-image"
+							id="resumeImgView"
+							style="display: none"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Persona Modal -->
+		<div id="personaModal" class="modal">
+			<div class="modal-content persona-modal">
+				<span class="close" onclick="closePersonaModal()">&times;</span>
+				<div class="persona-container">
+					<div class="persona-header">
+						<h2>Persona Page</h2>
+					</div>
+					<div class="persona-viewer">
+						<img
+							src="Persona Page.png"
+							alt="Persona Page"
+							class="persona-image"
+						/>
+					</div>
+
+					<!-- Back to Home Button -->
+					<div class="modal-footer">
+						<button class="back-home-btn" onclick="scrollToHome()">
+							<i class="fas fa-home"></i>
+							<span>Back to Home</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Donate Modal -->
+		<div id="donateModal" class="modal">
+			<div class="modal-content donate-modal">
+				<span class="close" onclick="closeDonateModal()">&times;</span>
+				<div class="donate-container">
+					<div class="donate-header">
+						<div>
+							<h2>Support My Work</h2>
+							<p class="donate-sub">
+								If you enjoy what I build, here are a few ways to donate.
+							</p>
+						</div>
+					</div>
+
+					<div class="donate-grid">
+						<div class="donate-card gcash">
+							<div class="card-head">
+								<i class="fas fa-mobile-screen-button"></i>
+								<h3>GCash</h3>
+							</div>
+							<p class="muted">
+								Account: <strong>Marconi Dominyx Asis</strong>
+							</p>
+							<div class="code-pill">
+								<span id="gcashCode">09770433448</span>
+								<button class="copy-btn" data-copy-target="#gcashCode">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="donate-card crypto">
+							<div class="card-head">
+								<i class="fas fa-coins"></i>
+								<h3>Crypto</h3>
+							</div>
+							<label
+								for="cryptoNetwork"
+								class="muted"
+								style="display: block; margin-bottom: 0.4rem"
+								>Network</label
+							>
+							<select
+								id="cryptoNetwork"
+								class="network-select"
+								aria-label="Select crypto network"
+							>
+								<option value="bsc">BSC (BEP20)</option>
+								<option value="trx">TRX (TRC20)</option>
+								<option value="eth">ETH (ERC20)</option>
+								<option value="matic">Matic (PoS)</option>
+								<option value="sol">Solana (SOL)</option>
+							</select>
+							<div class="code-pill" style="margin-top: 0.6rem">
+								<span id="cryptoAddr"
+									>0x927e3f1ad89d68c13a50c4e54dc4d5a9eeb8b8f6</span
+								>
+								<button class="copy-btn" data-copy-target="#cryptoAddr">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="donate-card binance">
+							<div class="card-head">
+								<i class="fas fa-circle-dollar-to-slot"></i>
+								<h3>Binance</h3>
+							</div>
+							<p class="muted">Name: <strong>Dominyx</strong></p>
+							<div class="code-pill">
+								<span id="binanceId">250425055</span>
+								<button class="copy-btn" data-copy-target="#binanceId">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div
+						id="copyToast"
+						class="copy-toast"
+						aria-live="polite"
+						aria-atomic="true"
+					>
+						Copied!
+					</div>
+
+					<!-- Back to Home Button -->
+					<div class="modal-footer">
+						<button class="back-home-btn" onclick="scrollToHome()">
+							<i class="fas fa-home"></i>
+							<span>Back to Home</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p class="copyright">
+					© 2025 Marconi Dominyx Gayo Asis | Creating slowly. Living fully.
+				</p>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
