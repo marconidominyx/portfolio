@@ -15,7 +15,7 @@ body {
 body {
 	font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
 		"Segoe UI", sans-serif;
-	background: #060708;
+	background: radial-gradient(circle at 10% 0%, #111827 0, #020617 55%, #02030a 100%);
 	color: #f3f4f6;
 	-webkit-font-smoothing: antialiased;
 }
@@ -31,6 +31,75 @@ a {
 	display: grid;
 	grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.7fr);
 	gap: 3.5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Moon background */
+.page::before {
+	content: "";
+	position: absolute;
+	top: clamp(-3rem, -10vh, -1rem);
+	right: clamp(-4rem, -6vw, -1rem);
+	width: clamp(150px, 18vw, 230px);
+	height: clamp(150px, 18vw, 230px);
+	border-radius: 50%;
+	background:
+		radial-gradient(circle at 30% 30%, #f9fafb 0, #e5e7eb 38%, #9ca3af 65%, #020617 100%);
+	box-shadow:
+		0 0 40px rgba(248, 250, 252, 0.3),
+		0 0 120px rgba(148, 163, 184, 0.35);
+	opacity: 0.9;
+	animation: float-moon 16s ease-in-out infinite;
+	z-index: -1;
+}
+
+/* Soft craters */
+.page::after {
+	content: "";
+	position: absolute;
+	top: clamp(1.5rem, 8vh, 3.5rem);
+	right: clamp(2.5rem, 6vw, 5rem);
+	width: clamp(80px, 10vw, 130px);
+	height: clamp(80px, 10vw, 130px);
+	border-radius: 50%;
+	background:
+		radial-gradient(circle at 40% 35%, rgba(15, 23, 42, 0.4) 0, transparent 55%),
+		radial-gradient(circle at 70% 70%, rgba(15, 23, 42, 0.35) 0, transparent 58%);
+	opacity: 0.55;
+	filter: blur(1px);
+	animation: float-moon 18s ease-in-out infinite reverse;
+	z-index: -1;
+}
+
+@keyframes float-moon {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(-6px, 10px, 0) scale(1.02);
+	}
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+/* Desktop: tuck moon further into the corner so it doesn't overlap side nav */
+@media (min-width: 960px) {
+	.page::before {
+		top: -4rem;
+		right: -3rem;
+		width: 210px;
+		height: 210px;
+		opacity: 0.85;
+	}
+
+	.page::after {
+		top: 0.5rem;
+		right: 1.5rem;
+		width: 130px;
+		height: 130px;
+	}
 }
 
 /* Left side: name + story */
