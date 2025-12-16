@@ -59,7 +59,7 @@ Nothing fancy. Just what works.
 
 ## please hire me (seriously)
 
-I'm open to any kind of work, collaboration, or wild ideas you might have. I'm an all-around person — I'll learn what I need to learn, figure things out as I go, and do my best to make things work.
+I'm open to any kind of work, collaboration, or wild ideas you might have. I'm an all-around person - I'll learn what I need to learn, figure things out as I go, and do my best to make things work.
 
 Why? Because I'm trying to provide for the people I love, and honestly, I just enjoy building things. Plus, I make a mean cup of coffee and I'm pretty good at responding to emails (most of the time).
 
