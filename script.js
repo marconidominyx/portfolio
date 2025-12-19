@@ -42,6 +42,34 @@ document.addEventListener("DOMContentLoaded", () => {
 	// initial state
 	setHeroSection("about");
 
+    // Init Hero Typing
+    initHeroTyping();
+    
+    // Typing Animation logic
+    function initHeroTyping() {
+        const textElement = document.querySelector('.typing-text');
+        if (!textElement) return;
+
+        // Text to type
+        const textToType = "// web3 community builder";
+        let charIndex = 0;
+        let typeSpeed = 100;
+
+        function type() {
+            if (charIndex < textToType.length) {
+                textElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                
+                // Varied typing speed for realism
+                const variation = Math.random() * 50;
+                setTimeout(type, typeSpeed + variation);
+            }
+        }
+
+        // Start after a slight delay
+        setTimeout(type, 1000);
+    }
+
     // Donate Modal
     const donateToggle = document.getElementById("donateToggle");
     if (donateToggle) {
