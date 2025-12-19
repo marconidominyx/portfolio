@@ -5,31 +5,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Khoni | Web3 Builder</title>
 		<link rel="icon" href="web3%20profile.png" type="image/png" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 	</head>
 	<body>
 		<div class="page">
 			<!-- Left: Name & narrative -->
 			<main class="hero">
 				<header class="hero-header">
-					<h1 class="hero-name">Khoni</h1>
-					<p class="hero-role">Web3 Community Builder</p>
+					<h1 class="hero-name"><span class="prompt">></span> khoni</h1>
+					<p class="hero-role"><span class="comment">// web3 community builder</span></p>
 				</header>
 
 				<section class="hero-text" id="heroContent"></section>
 
 				<section class="hero-links">
 					<a href="portfolio/Resume.pdf" target="_blank" class="hero-link">
-						<span class="hero-link-label">Resume</span>
+						<span class="hero-link-label">resume.pdf</span>
 						<span class="hero-link-icon">↗</span>
 					</a>
 					<a href="mailto:marconidominyx@gmail.com" class="hero-link subtle">
-						<span class="hero-link-label">Email</span>
-						<span class="hero-link-icon">✉</span>
+						<span class="hero-link-label">email</span>
+						<span class="hero-link-icon">@</span>
 					</a>
 					<a
 						href="portfolio/portfolio.html"
@@ -37,9 +37,13 @@
 						rel="noopener noreferrer"
 						class="hero-link"
 					>
-						<span class="hero-link-label">Personal Page</span>
+						<span class="hero-link-label">portfolio</span>
 						<span class="hero-link-icon">↗</span>
 					</a>
+					<button id="donateToggle" class="hero-link highlight-btn">
+						<span class="hero-link-label">./donate</span>
+						<span class="hero-link-icon">♥</span>
+					</button>
 				</section>
 			</main>
 
@@ -47,9 +51,9 @@
 			<aside class="side">
 				<nav class="side-nav">
 					<ul>
-						<li><a href="#" data-section="about">About</a></li>
-						<li><a href="#" data-section="work">Work</a></li>
-						<li><a href="#" data-section="links">Links</a></li>
+						<li><a href="#" data-section="about">~/about</a></li>
+						<li><a href="#" data-section="work">~/work</a></li>
+						<li><a href="#" data-section="links">~/links</a></li>
 					</ul>
 				</nav>
 			</aside>
@@ -58,39 +62,38 @@
 		<!-- Hidden templates for hero content -->
 		<section class="band band-templates" aria-hidden="true">
 			<div class="band-column" id="tpl-about">
-				<h2 class="band-title">About</h2>
+				<h2 class="band-title"><span class="prompt">$</span> cat about.txt</h2>
 				<p>
-					I moderate, build, host, and manage communities in Web3 and beyond. I
+					i moderate, build, host, and manage communities in web3 and beyond. i
 					like spaces that feel human, slow enough to think, and clear enough
 					that people know why they are there.
 				</p>
 				<p>
-					Most days I’m behind the scenes, setting expectations, keeping
-					conversations healthy, and making sure events actually run on time. I
+					most days i’m behind the scenes, setting expectations, keeping
+					conversations healthy, and making sure events actually run on time. i
 					care about structure that
 					<span class="highlight">stays calm</span> even when chat gets loud.
 				</p>
 				<p>
-					If you need someone to quietly keep things moving, connect
-					contributors, and protect the vibe of your community, that’s where I
+					if you need someone to quietly keep things moving, connect
+					contributors, and protect the vibe of your community, that’s where i
 					do my best work.
 				</p>
 			</div>
 
 			<div class="band-column" id="tpl-work">
-				<h2 class="band-title">Work</h2>
+				<h2 class="band-title"><span class="prompt">$</span> ls ./work</h2>
 				<ul class="band-list">
 					<li>
-						FSUU Employee Profile System, centralized employee profiles for a
-						university.
+						<span class="file-icon">f</span> FSUU Employee Profile System
 					</li>
-					<li>Oasis Pets, clean pet adoption UI and website.</li>
-					<li>Community and VA work, admin, moderation, and support.</li>
+					<li><span class="file-icon">f</span> Oasis Pets UI</li>
+					<li><span class="file-icon">d</span> Community & VA Management</li>
 				</ul>
 			</div>
 
 			<div class="band-column" id="tpl-links">
-				<h2 class="band-title">Links</h2>
+				<h2 class="band-title"><span class="prompt">$</span> ls ./connect</h2>
 				<ul class="link-list">
 					<li>
 						<a
@@ -98,12 +101,12 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							X (Twitter)
+							<span class="prompt">></span> X (Twitter)
 						</a>
 					</li>
 					<li>
 						<a href="https://github.com/marconidominyx" target="_blank">
-							GitHub
+							<span class="prompt">></span> GitHub
 						</a>
 					</li>
 					<li>
@@ -111,16 +114,105 @@
 							href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/"
 							target="_blank"
 						>
-							LinkedIn
+							<span class="prompt">></span> LinkedIn
 						</a>
 					</li>
-					<li></li>
 				</ul>
 			</div>
 		</section>
 
+		<!-- Donate Modal (Copied Structure) -->
+		<div id="donateModal" class="modal">
+			<div class="modal-content donate-modal">
+				<div class="modal-header-row">
+					<h2><span class="prompt">$</span> ./support-me</h2>
+					<span class="close" onclick="closeDonateModal()">&times;</span>
+				</div>
+				<div class="donate-container">
+					<div class="donate-header">
+						<p class="donate-sub">
+							If you enjoy what I build, here are a few ways to donate.
+						</p>
+					</div>
+
+					<div class="donate-grid">
+						<div class="donate-card gcash">
+							<div class="card-head">
+								<i class="fas fa-mobile-screen-button"></i>
+								<h3>GCash</h3>
+							</div>
+							<p class="muted">
+								Account: <strong>Marconi Dominyx Asis</strong>
+							</p>
+							<div class="code-pill">
+								<span id="gcashCode">09770433448</span>
+								<button class="copy-btn" data-copy-target="#gcashCode">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="donate-card crypto">
+							<div class="card-head">
+								<i class="fas fa-coins"></i>
+								<h3>Crypto</h3>
+							</div>
+							<label
+								for="cryptoNetwork"
+								class="muted"
+								style="display: block; margin-bottom: 0.4rem"
+								>Network</label
+							>
+							<select
+								id="cryptoNetwork"
+								class="network-select"
+								aria-label="Select crypto network"
+							>
+								<option value="bsc">BSC (BEP20)</option>
+								<option value="trx">TRX (TRC20)</option>
+								<option value="eth">ETH (ERC20)</option>
+								<option value="matic">Matic (PoS)</option>
+								<option value="sol">Solana (SOL)</option>
+							</select>
+							<div class="code-pill" style="margin-top: 0.6rem">
+								<span id="cryptoAddr"
+									>0x927e3f1ad89d68c13a50c4e54dc4d5a9eeb8b8f6</span
+								>
+								<button class="copy-btn" data-copy-target="#cryptoAddr">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="donate-card binance">
+							<div class="card-head">
+								<i class="fas fa-circle-dollar-to-slot"></i>
+								<h3>Binance</h3>
+							</div>
+							<p class="muted">Name: <strong>Dominyx</strong></p>
+							<div class="code-pill">
+								<span id="binanceId">250425055</span>
+								<button class="copy-btn" data-copy-target="#binanceId">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div
+						id="copyToast"
+						class="copy-toast"
+						aria-live="polite"
+						aria-atomic="true"
+					>
+						Copied!
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<footer class="footer">
-			<p>© 2025 Khoni · Web3 builder</p>
+			<p>© 2025 Khoni · web3 builder · <span class="blink">_</span></p>
 		</footer>
 
 		<script src="script.js"></script>
