@@ -5,9 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dominyx | Nomad</title>
 		<link rel="icon" href="../web3%20profile.png" type="image/png" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="styles.css" />
 		<link
 			rel="stylesheet"
@@ -21,12 +24,21 @@
 				<div class="nav-links">
 					<a href="#home" class="nav-link">Home</a>
 				</div>
-				<div class="nav-right">
+				<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="nav-right" id="navMenu">
 					<a href="../index.html" target="_blank" class="nav-link">WEB3 Page</a>
 					<a href="#projects" class="nav-link">Projects</a>
 					<a href="#skills" class="nav-link">Skills</a>
 					<a href="mailto:marconidominyx@gmail.com" class="nav-link">Contact</a>
-					<button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+					<button
+						id="themeToggle"
+						class="theme-btn"
+						aria-label="Toggle Dark Mode"
+					>
 						<i class="fas fa-moon"></i>
 					</button>
 				</div>
@@ -36,22 +48,41 @@
 			<section id="home" class="hero-section">
 				<div class="profile-header">
 					<div class="profile-img-container">
-						<img src="photo_2025-04-20_00-02-07.jpg" alt="Marconi Dominyx" class="profile-pic" />
+						<img
+							src="photo_2025-04-20_00-02-07.jpg"
+							alt="Marconi Dominyx"
+							class="profile-pic"
+						/>
 						<div class="status-indicator"></div>
 					</div>
 					<div class="profile-info">
 						<h1 class="name">Marconi Dominyx</h1>
-						<p class="bio"><span class="typing-text"></span><span class="typing-cursor">|</span></p>
+						<p class="bio">
+							<span class="typing-text"></span
+							><span class="typing-cursor">|</span>
+						</p>
 					</div>
 				</div>
 				<p class="hero-text">
-					I build digital experiences that value simplicity and function. 
+					I build digital experiences that value simplicity and function.
 					Currently exploring the intersection of design and code.
 				</p>
 				<div class="hero-actions">
-					<a href="https://github.com/marconidominyx" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
-					<a href="https://x.com/realkhoni" target="_blank" class="icon-link"><i class="fab fa-twitter"></i></a>
-					<a href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/" target="_blank" class="icon-link"><i class="fab fa-linkedin"></i></a>
+					<a
+						href="https://github.com/marconidominyx"
+						target="_blank"
+						class="icon-link"
+						><i class="fab fa-github"></i
+					></a>
+					<a href="https://x.com/realkhoni" target="_blank" class="icon-link"
+						><i class="fab fa-twitter"></i
+					></a>
+					<a
+						href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/"
+						target="_blank"
+						class="icon-link"
+						><i class="fab fa-linkedin"></i
+					></a>
 				</div>
 			</section>
 
@@ -77,91 +108,112 @@
 
 			<!-- Projects Section -->
 			<section id="projects" class="content-section">
-				<button class="section-toggle" onclick="toggleSection('projects')" aria-expanded="true">
+				<button
+					class="section-toggle"
+					onclick="toggleSection('projects')"
+					aria-expanded="true"
+				>
 					<h2 class="section-title">
-						Selected Projects 
+						Selected Projects
 						<i class="fas fa-chevron-down toggle-icon"></i>
 					</h2>
 				</button>
-				
+
 				<div id="projects-content" class="collapsible-content expanded">
 					<div class="project-list">
-					
-					<!-- Project 01 -->
-					<div class="project-card">
-						<div class="project-year">01</div>
-						<div class="project-content">
-							<div class="project-header">
-								<h3 class="project-title">FSUU Employee System</h3>
-								<div class="project-links">
-									<a href="https://fsuu-dms.xyz" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+						<!-- Project 01 -->
+						<div class="project-card">
+							<div class="project-year">01</div>
+							<div class="project-content">
+								<div class="project-header">
+									<h3 class="project-title">FSUU Employee System</h3>
+									<div class="project-links">
+										<a href="https://fsuu-dms.xyz" target="_blank"
+											><i class="fas fa-external-link-alt"></i
+										></a>
+									</div>
+								</div>
+								<p class="project-desc">
+									Centralized profile management system for university
+									employees.
+								</p>
+								<div class="tech-stack">
+									<span>PHP</span>
+									<span>MySQL</span>
+									<span>Bootstrap</span>
 								</div>
 							</div>
-							<p class="project-desc">Centralized profile management system for university employees.</p>
-							<div class="tech-stack">
-								<span>PHP</span>
-								<span>MySQL</span>
-								<span>Bootstrap</span>
-							</div>
 						</div>
-					</div>
 
-					<!-- Project 02 -->
-					<div class="project-card">
-						<div class="project-year">02</div>
-						<div class="project-content">
-							<div class="project-header">
-								<h3 class="project-title">Oasis Pets</h3>
-								<div class="project-links">
-									<a href="https://github.com/marconidominyx/pet-adoption" target="_blank"><i class="fab fa-github"></i></a>
+						<!-- Project 02 -->
+						<div class="project-card">
+							<div class="project-year">02</div>
+							<div class="project-content">
+								<div class="project-header">
+									<h3 class="project-title">Oasis Pets</h3>
+									<div class="project-links">
+										<a
+											href="https://github.com/marconidominyx/pet-adoption"
+											target="_blank"
+											><i class="fab fa-github"></i
+										></a>
+									</div>
+								</div>
+								<p class="project-desc">
+									Modern pet adoption platform with filtering and gallery.
+								</p>
+								<div class="tech-stack">
+									<span>React</span>
+									<span>Vite</span>
+									<span>Tailwind</span>
 								</div>
 							</div>
-							<p class="project-desc">Modern pet adoption platform with filtering and gallery.</p>
-							<div class="tech-stack">
-								<span>React</span>
-								<span>Vite</span>
-								<span>Tailwind</span>
-							</div>
 						</div>
-					</div>
 
-					<!-- Project 03 -->
-					<div class="project-card">
-						<div class="project-year">03</div>
-						<div class="project-content">
-							<div class="project-header">
-								<h3 class="project-title">Our Story</h3>
-								<div class="project-links">
-									<a href="https://marconidominyx.github.io/ourstory/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+						<!-- Project 03 -->
+						<div class="project-card">
+							<div class="project-year">03</div>
+							<div class="project-content">
+								<div class="project-header">
+									<h3 class="project-title">Our Story</h3>
+									<div class="project-links">
+										<a
+											href="https://marconidominyx.github.io/ourstory/"
+											target="_blank"
+											><i class="fas fa-external-link-alt"></i
+										></a>
+									</div>
+								</div>
+								<p class="project-desc">Interactive narrative experience.</p>
+								<div class="tech-stack">
+									<span>HTML</span>
+									<span>CSS</span>
+									<span>JS</span>
 								</div>
 							</div>
-							<p class="project-desc">Interactive narrative experience.</p>
-							<div class="tech-stack">
-								<span>HTML</span>
-								<span>CSS</span>
-								<span>JS</span>
-							</div>
 						</div>
-					</div>
-					
-					<!-- Project 04 -->
-					<div class="project-card">
-						<div class="project-year">04</div>
-						<div class="project-content">
-							<div class="project-header">
-								<h3 class="project-title">Simon Game</h3>
-								<div class="project-links">
-									<a href="https://marconidominyx.github.io/Simon-Game-Challenge/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-								</div>
-							</div>
-							<p class="project-desc">Classic memory game.</p>
-							<div class="tech-stack">
-								<span>JS</span>
-								<span>DOM</span>
-							</div>
-						</div>
-					</div>
 
+						<!-- Project 04 -->
+						<div class="project-card">
+							<div class="project-year">04</div>
+							<div class="project-content">
+								<div class="project-header">
+									<h3 class="project-title">Simon Game</h3>
+									<div class="project-links">
+										<a
+											href="https://marconidominyx.github.io/Simon-Game-Challenge/"
+											target="_blank"
+											><i class="fas fa-external-link-alt"></i
+										></a>
+									</div>
+								</div>
+								<p class="project-desc">Classic memory game.</p>
+								<div class="tech-stack">
+									<span>JS</span>
+									<span>DOM</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -192,11 +244,12 @@
 
 			<!-- Floating Terminal Action -->
 			<div class="floating-terminal">
-				<button onclick="window.location.href='mailto:marconidominyx@gmail.com'">
+				<button
+					onclick="window.location.href='mailto:marconidominyx@gmail.com'"
+				>
 					<span class="prompt">$</span> ./contact-me
 				</button>
 			</div>
-
 		</div>
 		<script src="script.js"></script>
 	</body>
