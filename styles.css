@@ -237,10 +237,19 @@ a {
 .side {
 	display: flex;
 	flex-direction: column;
-	justify-content: center; /* Centered vertically to avoid moon overlap */
+	/* Use full available height so we can position footer at bottom */
+	height: 100%;
+	/* Grid stretches it, but flex column needs controls */
+	justify-content: space-between; 
 	align-items: flex-end;
 	gap: 2.5rem;
 	z-index: 10;
+}
+
+.side-nav {
+	/* Auto margins to center the nav vertically in the available space */
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .side-nav ul {
@@ -279,17 +288,12 @@ a {
 	display: none; /* Content is loaded via JS */
 }
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	padding: 1rem;
-	text-align: center;
-	font-size: 0.8rem;
+.side-footer {
+	text-align: right;
+	font-size: 0.75rem;
 	color: var(--text-muted);
-	background: rgba(2, 6, 23, 0.8);
-	backdrop-filter: blur(4px);
-	z-index: -2;
+	opacity: 0.6;
+	padding-bottom: 0.5rem;
 }
 
 .blink {
@@ -520,6 +524,9 @@ a {
 		margin-top: 0;
 	}
 	.side-nav ul {
+		text-align: left;
+	}
+	.side-footer {
 		text-align: left;
 	}
 }
