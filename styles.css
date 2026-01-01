@@ -7,8 +7,7 @@
 	padding: 0;
 }
 
-html,
-body {
+html {
 	height: 100%;
 }
 
@@ -24,6 +23,7 @@ body {
 }
 
 body {
+	min-height: 100vh;
 	font-family: var(--font-mono);
 	background: radial-gradient(
 		circle at 10% 0%,
@@ -31,6 +31,7 @@ body {
 		#020617 55%,
 		#02030a 100%
 	);
+	background-attachment: fixed; /* Fix background scrolling issue */
 	color: var(--text-main);
 	-webkit-font-smoothing: antialiased;
 }
@@ -47,7 +48,7 @@ a {
 	grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.7fr);
 	gap: 3.5rem;
 	position: relative;
-	overflow: hidden;
+	/* overflow: hidden; Removed to allow sticking if needed, check if necessary */
 }
 
 /* =========================================
@@ -267,15 +268,14 @@ a {
 	padding: 0.2rem 0;
 	position: relative;
 	transition: color 0.2s;
-	mix-blend-mode: difference;
+	/* mix-blend-mode removed for stability */
 	font-weight: 600;
 }
 
 .side-nav a:hover,
 .side-nav a.active {
 	color: var(--accent);
-	mix-blend-mode: normal;
-	text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+	text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
 }
 
 .side-nav a.active::before {

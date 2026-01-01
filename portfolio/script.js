@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	const savedTheme = localStorage.getItem("theme");
 	const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+	// Mouse tracking for glow effects
+	document.addEventListener("mousemove", (e) => {
+		const cards = document.querySelectorAll(".project-card");
+		cards.forEach((card) => {
+			const rect = card.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
+			card.style.setProperty("--mouse-x", `${x}px`);
+			card.style.setProperty("--mouse-y", `${y}px`);
+		});
+	});
+
 	if (savedTheme === "dark" || (!savedTheme && systemDark)) {
 		body.setAttribute("data-theme", "dark");
 		updateIcon(true);
