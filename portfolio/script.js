@@ -124,7 +124,7 @@ function initTypingAnimation() {
 	const textElement = document.querySelector(".typing-text");
 	if (!textElement) return;
 
-	const words = ["Vibe Coder.", "Creator.", "Minimalist."];
+	const words = ["Builder.", "Creator.", "Minimalist."];
 	let wordIndex = 0;
 	let charIndex = 0;
 	let isDeleting = false;
