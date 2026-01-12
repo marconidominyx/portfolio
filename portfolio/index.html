@@ -23,15 +23,15 @@
 		
 		<!-- Sidebar Navigation -->
 		<nav class="sidebar-nav">
-			<a href="#home" class="nav-link-item active" title="Home">
+			<a href="#" class="nav-link-item active" title="Home" data-view="home">
 				<span class="nav-icon"><i class="fas fa-home"></i></span>
 				<span class="nav-text">Home</span>
 			</a>
-			<a href="projects/index.html" class="nav-link-item" title="Projects">
+			<a href="#" class="nav-link-item" title="Projects" data-view="projects">
 				<span class="nav-icon"><i class="fas fa-briefcase"></i></span>
 				<span class="nav-text">Projects</span>
 			</a>
-			<a href="about/index.html" class="nav-link-item" title="About">
+			<a href="#" class="nav-link-item" title="About" data-view="about">
 				<span class="nav-icon"><i class="fas fa-user"></i></span>
 				<span class="nav-text">About</span>
 			</a>
@@ -39,35 +39,224 @@
 		
 		<div class="main-container">
 
-			<!-- Hero Section -->
-			<section id="home" class="hero-section">
-				<img src="photo_2025-12-31 12.47.49.jpeg" alt="Marconi Dominyx" class="hero-avatar" />
-				<h1 class="hero-heading">Hey, Dominyx here</h1>
-				<p class="hero-subheading" id="dynamic-greeting">How's your Sunday?</p>
-				<p class="hero-bio">
-					I build digital experiences that value simplicity and function.
-					Currently exploring the intersection of design and code.
-				</p>
-				<div class="hero-buttons">
-					<a href="mailto:marconidominyx@gmail.com" class="contact-btn">Contact</a>
-					<a href="../index.html" class="contact-btn">Web3 Profile</a>
+			<!-- View: Home -->
+			<div id="view-home" class="content-view active">
+				<section class="hero-section">
+					<img src="photo_2025-12-31 12.47.49.jpeg" alt="Marconi Dominyx" class="hero-avatar" />
+					<h1 class="hero-heading">Hey, Dominyx here</h1>
+					<p class="hero-subheading" id="dynamic-greeting">How's your Sunday?</p>
+					<p class="hero-bio">
+						I build digital experiences that value simplicity and function.
+						Currently exploring the intersection of design and code.
+					</p>
+					<div class="hero-buttons">
+						<a href="mailto:marconidominyx@gmail.com" class="contact-btn">Contact</a>
+						<a href="../index.html" class="contact-btn">Web3 Profile</a>
+					</div>
+					<div class="social-links">
+						<a href="https://github.com/marconidominyx" target="_blank" class="social-icon" title="GitHub">
+							<i class="fab fa-github"></i>
+						</a>
+						<a href="https://x.com/realkhoni" target="_blank" class="social-icon" title="Twitter">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a href="https://www.instagram.com/marconidominyx/" target="_blank" class="social-icon" title="Instagram">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/" target="_blank" class="social-icon" title="LinkedIn">
+							<i class="fab fa-linkedin"></i>
+						</a>
+					</div>
+					<p class="coming-soon">More coming soon...</p>
+				</section>
+			</div>
+
+			<!-- View: Projects -->
+			<div id="view-projects" class="content-view" style="display:none;">
+				<div class="page-header">
+					<h1 class="page-title">Selected Projects</h1>
+					<p class="page-subtitle">A collection of my work and side projects</p>
 				</div>
-				<div class="social-links">
-					<a href="https://github.com/marconidominyx" target="_blank" class="social-icon" title="GitHub">
-						<i class="fab fa-github"></i>
-					</a>
-					<a href="https://x.com/realkhoni" target="_blank" class="social-icon" title="Twitter">
-						<i class="fab fa-twitter"></i>
-					</a>
-					<a href="https://www.instagram.com/marconidominyx/" target="_blank" class="social-icon" title="Instagram">
-						<i class="fab fa-instagram"></i>
-					</a>
-					<a href="https://www.linkedin.com/in/marconi-dominyx-asis-07229135a/" target="_blank" class="social-icon" title="LinkedIn">
-						<i class="fab fa-linkedin"></i>
-					</a>
+
+				<div class="project-list">
+					<!-- Project 01 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">Urians</h3>
+								<div class="project-links">
+									<a href="https://urians.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">University centralized platform.</p>
+							<div class="tech-stack">
+								<span>Web App</span>
+								<span>Full Stack</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 02 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">FSUU Employee System</h3>
+								<div class="project-links">
+									<a href="https://fsuu-dms.xyz" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">Centralized profile management system for university employees.</p>
+							<div class="tech-stack">
+								<span>PHP</span>
+								<span>MySQL</span>
+								<span>Bootstrap</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 03 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">Oasis Pets</h3>
+								<div class="project-links">
+									<a href="https://github.com/marconidominyx/pet-adoption" target="_blank"><i class="fab fa-github"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">Modern pet adoption platform with filtering and gallery.</p>
+							<div class="tech-stack">
+								<span>React</span>
+								<span>Vite</span>
+								<span>Tailwind</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 04 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">Our Story</h3>
+								<div class="project-links">
+									<a href="https://marconidominyx.github.io/ourstory/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">Interactive narrative experience.</p>
+							<div class="tech-stack">
+								<span>HTML</span>
+								<span>CSS</span>
+								<span>JS</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 05 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">Simon Game</h3>
+								<div class="project-links">
+									<a href="https://marconidominyx.github.io/Simon-Game-Challenge/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">Classic memory game.</p>
+							<div class="tech-stack">
+								<span>JS</span>
+								<span>DOM</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 06 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">Urian Bot</h3>
+								<div class="project-links">
+									<a href="https://github.com/marconidominyx/urian-bot" target="_blank"><i class="fab fa-github"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">Custom Discord bot for automations and utilities.</p>
+							<div class="tech-stack">
+								<span>Python</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 07 -->
+					<div class="project-card">
+						<div class="project-content">
+							<div class="project-header">
+								<h3 class="project-title">Comopsbot</h3>
+								<div class="project-links">
+									<a href="https://github.com/marconidominyx/comopsbot" target="_blank"><i class="fab fa-github"></i></a>
+								</div>
+							</div>
+							<p class="project-desc">Specialized Discord bot for community operations.</p>
+							<div class="tech-stack">
+								<span>Python</span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<p class="coming-soon">More coming soon...</p>
-			</section>
+			</div>
+
+			<!-- View: About -->
+			<div id="view-about" class="content-view" style="display:none;">
+				<div class="page-header">
+					<h1 class="page-title">About Me</h1>
+					<p class="page-subtitle">Skills, tools, and a bit about what I do</p>
+				</div>
+
+				<section class="content-section">
+					<h2 class="section-title">Skills & Tools</h2>
+					<div class="skills-grid">
+						<div class="skill-category">
+							<h3>Development</h3>
+							<p>HTML, CSS, JavaScript, React, PHP, MySQL</p>
+						</div>
+						
+						<div class="skill-category">
+							<h3>Design</h3>
+							<p>Figma (Wireframing & UI), Canva, UI/UX Prototyping, User-Centered Design, Design-to-Code Handoff</p>
+						</div>
+						
+						<div class="skill-category">
+							<h3>Productivity & Tools</h3>
+							<p>Notion (Project Tracking & Docs), Basic Project Management, Task Organization, Workflow Planning</p>
+						</div>
+						
+						<div class="skill-category">
+							<h3>Virtual & Admin Support</h3>
+							<p>Virtual Assistance, Email/Calendar Management, Data Entry, Community Support, Basic Social Media</p>
+						</div>
+						
+						<div class="skill-category">
+							<h3>Soft Skills</h3>
+							<p>Clear Communication, Time Management, Adaptability, Attention to Detail, Team Collaboration</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="content-section">
+					<h2 class="section-title">More About Me</h2>
+					<div class="about-content">
+						<p>
+							I'm a developer and designer passionate about creating digital experiences 
+							that are both beautiful and functional. I believe in the power of simplicity 
+							and clean design to solve complex problems.
+						</p>
+						<p>
+							When I'm not coding, you can find me exploring new design trends, 
+							contributing to open-source projects, or helping others learn to code.
+						</p>
+						<p>
+							I'm always open to new opportunities and collaborations. Feel free to 
+							reach out if you'd like to work together!
+						</p>
+					</div>
+				</section>
+			</div>
 
 			<!-- Footer -->
 			<footer class="footer">

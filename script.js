@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}, 180);
 
 		// update active nav state
-		document.querySelectorAll(".side-nav a[data-section]").forEach((link) => {
+		document.querySelectorAll(".sidebar-nav a[data-section]").forEach((link) => {
 			if (link.getAttribute("data-section") === key) {
 				link.classList.add("active");
 			} else {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// nav clicks
-	document.querySelectorAll(".side-nav a[data-section]").forEach((link) => {
+	document.querySelectorAll(".sidebar-nav a[data-section]").forEach((link) => {
 		link.addEventListener("click", (e) => {
 			e.preventDefault();
 			const key = link.getAttribute("data-section");
