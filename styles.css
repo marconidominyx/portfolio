@@ -12,26 +12,24 @@ html {
 }
 
 :root {
-	--font-mono: "JetBrains Mono", "Fira Code", monospace;
-	--bg-dark: #020617;
-	--text-main: #e2e8f0;
-	--text-muted: #94a3b8;
-	--accent: #22c55e; /* Terminal Green */
-	--accent-hover: #4ade80;
-	--border: #1e293b;
-	--card-bg: #0f172a;
+	/* New Dark Theme Palette */
+	--font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-mono: 'Fragment Mono', monospace;
+	
+	--bg-dark: #0A0A0A;      /* Deep dark background */
+	--card-bg: #171717;      /* Dark card background */
+	--text-main: #EDEDED;    /* High contrast text */
+	--text-muted: #A3A3A3;   /* Muted text */
+	--accent: #FFFFFF;       /* White accent */
+	--border: rgba(255, 255, 255, 0.1);
+	
+	--vignette-blue: rgba(0, 107, 255, 0.1);
 }
 
 body {
 	min-height: 100vh;
-	font-family: var(--font-mono);
-	background: radial-gradient(
-		circle at 10% 0%,
-		#111827 0,
-		#020617 55%,
-		#02030a 100%
-	);
-	background-attachment: fixed; /* Fix background scrolling issue */
+	font-family: var(--font-main);
+	background: var(--bg-dark);
 	color: var(--text-main);
 	-webkit-font-smoothing: antialiased;
 }
@@ -48,93 +46,33 @@ a {
 	grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.7fr);
 	gap: 3.5rem;
 	position: relative;
-	/* overflow: hidden; Removed to allow sticking if needed, check if necessary */
+	z-index: 1;
 }
-
-/* =========================================
-   MOON PRESERVATION (DO NOT TOUCH)
-   ========================================= */
-.page::before {
-	content: "";
-	position: absolute;
-	top: clamp(-3rem, -10vh, -1rem);
-	right: clamp(-4rem, -6vw, -1rem);
-	width: clamp(150px, 18vw, 230px);
-	height: clamp(150px, 18vw, 230px);
-	border-radius: 50%;
-	background: radial-gradient(
-		circle at 30% 30%,
-		#f9fafb 0,
-		#e5e7eb 38%,
-		#9ca3af 65%,
-		#020617 100%
-	);
-	box-shadow: 0 0 40px rgba(248, 250, 252, 0.3),
-		0 0 120px rgba(148, 163, 184, 0.35);
-	opacity: 0.9;
-	animation: float-moon 16s ease-in-out infinite;
-	z-index: -1;
-}
-
-.page::after {
-	content: "";
-	position: absolute;
-	top: clamp(1.5rem, 8vh, 3.5rem);
-	right: clamp(2.5rem, 6vw, 5rem);
-	width: clamp(80px, 10vw, 130px);
-	height: clamp(80px, 10vw, 130px);
-	border-radius: 50%;
-	background: radial-gradient(
-			circle at 40% 35%,
-			rgba(15, 23, 42, 0.4) 0,
-			transparent 55%
-		),
-		radial-gradient(
-			circle at 70% 70%,
-			rgba(15, 23, 42, 0.35) 0,
-			transparent 58%
-		);
-	opacity: 0.55;
-	filter: blur(1px);
-	animation: float-moon 18s ease-in-out infinite reverse;
-	z-index: -1;
-}
-
-@keyframes float-moon {
-	0% {
-		transform: translate3d(0, 0, 0) scale(1);
-	}
-	50% {
-		transform: translate3d(-6px, 10px, 0) scale(1.02);
-	}
-	100% {
-		transform: translate3d(0, 0, 0) scale(1);
-	}
-}
-
-/* CRT Scanline Effect */
-.scanlines {
+/* Vignette Overlay */
+.vignette-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient(
-		rgba(18, 16, 16, 0) 50%,
-		rgba(0, 0, 0, 0.25) 50%
-	),
-	linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-	background-size: 100% 2px, 3px 100%;
-	z-index: 9999;
 	pointer-events: none;
-	opacity: 0.4;
-	animation: flicker 0.15s infinite;
+	z-index: 0;
+	background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+	box-shadow: inset 0 0 100px 30px var(--vignette-blue);
 }
 
-@keyframes flicker {
-	0% { opacity: 0.4; }
-	50% { opacity: 0.42; }
-	100% { opacity: 0.4; }
+/* Typography Overrides */
+.hero-name, .hero-link-label, .side-nav, .band-title, h1, h2, h3 {
+	font-family: var(--font-main);
+}
+
+.prompt, .typing-cursor, .code-pill, .network-select {
+	font-family: var(--font-mono);
+}
+
+/* Hide old moon effects */
+.page::before, .page::after, .scanlines {
+	display: none;
 }
 
 /* Glassmorphism improvements for header */
@@ -193,10 +131,9 @@ a {
 }
 
 .prompt {
-	color: var(--accent);
+	color: var(--text-muted);
 	margin-right: 0.5rem;
 	font-weight: bold;
-	text-shadow: 0 0 10px rgba(34, 197, 94, 0.4); /* Glow effect */
 }
 
 /* Removed old .comment class as it's replaced by dynamic typing */
@@ -217,8 +154,8 @@ a {
 }
 
 .highlight {
-	color: var(--accent);
-	background: rgba(34, 197, 94, 0.1);
+	color: #000;
+	background: var(--accent);
 	padding: 0 4px;
 }
 
@@ -251,20 +188,20 @@ a {
 	border-color: var(--accent);
 	color: var(--accent);
 	transform: translateY(-2px);
-	background: rgba(34, 197, 94, 0.05);
-	box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .hero-link.highlight-btn {
 	border-color: var(--accent);
-	color: var(--accent);
-	background: rgba(34, 197, 94, 0.08);
+	color: #000;
+	background: var(--accent);
 }
 
 .hero-link.highlight-btn:hover {
-	background: var(--accent);
+	background: #fff;
 	color: #000;
-	box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+	box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
 }
 
 .hero-link-label {
@@ -313,7 +250,7 @@ a {
 .side-nav a:hover,
 .side-nav a.active {
 	color: var(--accent);
-	text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .side-nav a.active::before {
